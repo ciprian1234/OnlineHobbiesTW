@@ -1,0 +1,54 @@
+Login: cu cont social
+
+///////////////////////
+//DataBase: ProiectTW//
+///////////////////////
+
+USERS
+id_user (PK)
+private_key () //pentru a tine minte userul logat  (cookie/sesion) 
+
+
+ADMINS
+username (PK)
+password
+rank
+
+
+PREFERENCES
+id_user (FK)
+id_hobby (FK)
+
+
+CATEGORIES
+id_category (PK)
+title
+description
+
+
+HOBBIES
+id_hobby (PK)
+id_category (FK)
+title
+description
+media
+
+
+ARTICLES
+id_article (PK)
+id_user (FK)
+id_hobby (FK)
+count_pros
+count_cons
+title
+text
+media
+
+
+COMMENTS
+id_comment (PK)
+id_article (FK)
+id_user (FK)
+text
+count_pros
+count_cons
