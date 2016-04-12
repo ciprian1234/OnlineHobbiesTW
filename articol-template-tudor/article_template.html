@@ -2,8 +2,29 @@
 <html>
 <head><title>Articol Template</title></head>
 <link  rel="stylesheet" type="text/css" href="article.css">
-<body>
+<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/960_16_col.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+</head>
+	
+	<body>
+<header class="container_16">
+    <ul>
+        <li> <a class="grid_2 menuButton" href="index.html">Home</a> </li>
+        <li> <a class="grid_2 menuButton" href="index.html">Categories</a> </li> 
+    </ul>
 
+        <a href="#" class="bigButton">
+            <h2>SIGN IN</h2>
+        </a>
+        <a href="#" class="bigButton">
+            <h2>ELSE</h2>
+        </a>
+</header>
+
+<main class="container_16">
 <div class="main">
 <img src="images.png" alt="Mountain View" align="left"/>
 </div>
@@ -25,14 +46,17 @@ inclusiv a unui Oscar la categoria film stain, aduce pe ecrane o frantura din
 <p> Lasa un comentariu</p>
 
 <form action="" method="post"> 
-   <p>Nume <input type="text" name="nr_matr" size="20"
-        /><br>
-    Email <input type="text" name="nume" size="20"
-   	     /> </p><br>
-		 <p> Comentariu</p><br> <p><input type="text" id="com" name="prenume" size="20"/></p><br>
+   <label class="grid_3">Nume:</label> 
+   <input type="text" name="nr_matr" class="grid_12 formItem" size="20"
+        />
+     <label class="grid_3">Email:</label> 
+	<input type="text"class="grid_12 formItem" name="nume" size="20"
+   	     /> 
+		 <label class="grid_3">Comentariu:</label>
+		  <br> <p><input type="text" id="com" name="prenume"  size="20"/></p>
 
   <p>
-  <input type="submit" value="submit" 
+  <input type="submit" class="formButton grid_2" value="submit" 
         title="Apasati butonul pentru a expedia datele spre server" /> </p>
 </div>		
 </body>

@@ -1,0 +1,25 @@
+form .formItem {
+	border: 2px solid lightgrey;
+	border-radius: 5px;
+}
+
+form .formItem:hover {
+	border: 2px solid grey;
+}
+
+form div {
+	clear: both;
+	display: block;
+}
+
+form .formButton {
+	padding: 10px 10px;
+	border-radius: 10px;
+	color: white;
+	text-align: center;
+	background: linear-gradient(brown, red);
+}
+
+form .formButton:hover {
+	background: brown;
+}
