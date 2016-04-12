@@ -10,6 +10,7 @@ header {
 	z-index: 10;
 	height: 80px;
 	border-radius: 0px 0px 10px 10px;
+    top:0;
 
 	border: 2px solid #3a5795;
 }
@@ -19,15 +20,14 @@ header .menuButton {
 	text-decoration: none;
 	margin-top: 20px;
 	padding: 10px 20px;
-	background: brown;
-	border: 1px solid red;
+    font-size: 18px;
 	color: white;
-	background: linear-gradient(brown, red);
 }
 
-header .menuButton:hover {
-	background: chocolate;
+.menuButton:hover{
+	background-color: dodgerblue;
 }
+
 
 header .bigButton {
 	background: linear-gradient(brown, #C63D0F);
@@ -86,3 +86,38 @@ footer {
 	background: grey;
 	height: 20px;
 }
+.category-container{
+    margin-left:120px;
+}
+.category li:hover > ul{
+    display:block;
+    border:0;
+}
+.category li{
+    float:left;
+}
+.category a{
+    text-decoration: none;
+    color:white;
+    display:block;
+}
+.category .subcategory{
+    display:none;
+    position:absolute;
+    top:60px;
+}
+    .category .subcategory li a{
+            color:#fff;
+            margin:0;
+        }
+        .category .subcategory .menuButton{
+            margin:0;
+            margin-left:-20px;
+            width:150px;
+            background-color: #4BC970;
+            float:none;
+            display:block;
+        }
+        .category .subcategory .menuButton:hover{
+            background:chocolate;
+        }
