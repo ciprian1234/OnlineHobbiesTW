@@ -100,8 +100,10 @@ footer {
     text-decoration: none;
     color:white;
     display:block;
+    padding:0 20px;
 }
 .category .subcategory{
+    
     display:none;
     position:absolute;
     top:60px;
@@ -112,12 +114,24 @@ footer {
         }
         .category .subcategory .menuButton{
             margin:0;
-            margin-left:-20px;
             width:150px;
             background-color: #4BC970;
             float:none;
             display:block;
+            margin-left:-20px;
         }
         .category .subcategory .menuButton:hover{
             background:chocolate;
+        }
+        .category .subcategory li:first-child{
+            border-radius: 0 20px 0 0;
+            -webkit-border-radius:0 20px 0 0;
+            -moz-border-radius:0 20px 0 0;
+        }
+        .category .subcategory li:last-child{
+            
+         border-radius: 0 0 20px 0;
+         -webkit-border-radius: 0 0 20px 0;
+         -moz-border-radius: 0 0 20px 0;
+        }
         }
