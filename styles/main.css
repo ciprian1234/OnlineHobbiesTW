@@ -1,0 +1,122 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    background-color:dimgrey;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 50px;
+    margin-top: 60px;
+    width: 80%;
+    display:flex;
+    flex-direction: column;
+    min-height: 768px;
+    z-index: 5;
+    overflow-x: auto;
+}
+#header{
+    height: 60px;
+    width:80%;
+    position:fixed;
+    top:0px;
+    z-index: 10;
+    background-color:#C63D0F;
+    border-radius:0px 0px 20px 20px;
+}
+#header #loginButton{
+    background-color:red;
+    width:150px;
+    height:40px;
+    margin-top:10px;
+    float:right;
+    margin-right:20px;
+}
+#header #loginButton h3{
+    text-decoration: none;
+    color:antiquewhite;
+    text-align: center;
+    margin:10px;
+}
+#header #loginButton:hover{
+    background-color:crimson;
+}
+
+
+#header #navbar{
+    margin-top:20px;
+    float:left;
+    text-decoration: none;
+}
+#header #navbar,ul.cat,ul.subcat{
+    list-style-type: none;
+}
+#header #navbar ul > li{
+    outline:1px solid red;
+    width:150px;
+    height: 30px;
+    text-align: center;
+    position:relative;
+    float:left;
+    background-color:brown;
+}
+#header #navbar a{
+    text-decoration: none;
+    color:white;
+}
+#header #navbar li:hover{
+    background-color:chocolate;
+}
+
+.page-wrapper{
+    margin-top:10px;
+    flex:1;
+    border:1px solid pink;
+    background-color:#FDF3E7;
+}
+
+.page-wrapper .page-wrapper-heading{
+    text-align:center;
+}
+.page-wrapper .page-wrapper-heading .heading{
+    text-align: center;
+    margin-top:10px;
+}
+
+.page-wrapper .landing-categories{
+    border:1px solid red;
+}
+.page-wrapper .landing-categories row{
+    margin-left:10%;
+    margin-right:10%;
+}
+.page-wrapper .landing-categories .category-list{
+    margin-left:10%;
+    margin-right:10%;
+    width:100%;
+    text-align: center;
+    border:1px solid blue;
+}
+.page-wrapper .landing-categories .category-list li{
+    text-align:center;
+    padding:0;
+    border:1px solid yellow;
+    margin:10px 10px 10px 10px;
+    float:left;
+}
+.page-wrapper .landing-categories .category-list li:nth-child(3n+1){
+    clear:left;
+}
+
+.page-wrapper .landing-categories .category-title{
+    font-size:16px;
+    min-height: 45px;
+    padding:5px 5px 5px;
+}
+.page-wrapper .landing-categories .category-list .category-tile{
+    position:relative;
+    min-height: 1px;
+    padding-left: 10px;
+    width:200px;
+    height:200px;
+}
