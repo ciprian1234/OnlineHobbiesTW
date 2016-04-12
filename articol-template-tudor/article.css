@@ -1,0 +1,25 @@
+.main {
+	width:300px;
+    margin: 20px 20px 0 0;
+    margin-left:200px;
+
+	
+    
+  
+	
+   
+}
+.text{
+	background:red;
+	max-width:700px;
+	margin-left:200px;
+	 word-wrap: break-word;
+	 
+}
+.form{
+	margin-left:200px;
+}
+#com{
+	height:200px;
+	width:400px
+}
