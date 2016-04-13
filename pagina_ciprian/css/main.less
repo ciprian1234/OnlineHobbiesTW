@@ -1,0 +1,181 @@
+// Color variables (appears count calculates by raw css)
+@color0: pink; // Appears 2 times
+@headerColor:#3a5795;
+@categoryTileColor:dodgerblue;
+@cateGoryTileColorHover:skyblue;
+@subcategoryMenuButton:#4BC970;
+@subcategoryMenuButtonHover:skyblue;
+@pageBackground: linear-gradient(to left, #232526 , #414345);
+@mainPageColor: linear-gradient(to bottom, #02AAB0 , #00CDAC);
+
+body {
+  background: @pageBackground;
+}
+header {
+  background:@headerColor;
+  border-radius: 0px 0px 10px 10px;
+  border: 2px solid #3a5794;
+  height: 80px;
+  left: 50%;
+  position: fixed;
+  top:0;
+  transform: translateX(-50%);
+  z-index: 10;
+  .menuButton {
+    color: white;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+  }
+  .bigButton {
+    background: linear-gradient(brown, @color0);
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    float: right;
+    margin-right: 15px;
+    margin-top: 15px;
+    padding: 10px 20px;
+    text-decoration: none;
+    &:hover {
+      background: @color0;
+    }
+  }
+}
+.menuButton {
+  &:hover {
+    background-color: dodgerblue;
+  }
+}
+/*  Menu section */
+.category {
+  li {
+    float:left;
+    &:hover>ul {
+      border:0;
+      display:block;
+    }
+  }
+  a {
+    color:white;
+    display:block;
+    padding:0 20px;
+    text-decoration: none;
+  }
+  .subcategory {
+    display:none;
+    position:absolute;
+    top:60px;
+    li {
+      a {
+        color:#ffffff;
+        margin:0;
+      }
+      &:first-child {
+        -moz-border-radius:0 20px 0 0;
+        -webkit-border-radius:0 20px 0 0;
+        border-radius: 0 20px 0 0;
+      }
+      &:last-child {
+        -moz-border-radius: 0 0 20px 0;
+        -webkit-border-radius: 0 0 20px 0;
+        border-radius: 0 0 20px 0;
+      }
+    }
+    .menuButton {
+      background-color: @subcategoryMenuButton;
+      display:block;
+      float:none;
+      margin:0;
+      margin-left:-20px;
+      width:150px;
+      transition:all .4s ease;
+      &:hover {
+        background: @subcategoryMenuButtonHover;
+      }
+    }
+  }
+}
+/* End Menu Section */
+/* SEARCH BAR START */
+#searchForm {
+  position: relative;
+  top: 25px;
+  .searchBar {
+    border:1px solid lightblue;
+    float: left;
+    height: 25px;
+    &:hover {
+      border:1px solid blue;
+    }
+  }
+  .searchButton {
+    border: 1px solid lightgrey;
+    float: left;
+    height: 27px;
+    padding: 1px 5px;
+    &:hover {
+      border: 1px solid grey;
+    }
+  }
+}
+/*SEARCH BAR END*/
+main {
+  background: @mainPageColor;
+  border: 2px solid lightblue;
+  min-height: 600px;
+  padding-bottom: 50px;
+  position: relative;
+  top: 90px;
+}
+.heading {
+  margin-top:20px;
+  text-align: center;
+}
+
+/*  Categories section */
+.category-container {
+  margin-left:120px;
+}
+.item_box {
+  background-color: @categoryTileColor;
+  background-size:100% 100%;
+  color: black;
+  font-size: 20px;
+  height: 200px;
+  text-align: center;
+  &:hover {
+    background-color:@cateGoryTileColorHover;
+    border-color: red;
+    //transform: scale(1.1);
+    transform:rotate(360deg);
+    border-radius:100px;
+    transition: all 0.3s ease;
+  }
+  .category-title {
+    color:white;
+    margin-bottom:20px;
+  }
+  .category-link {
+    display:block;
+    padding:20px 20px 35px 20px;
+    position:relative;
+  }
+}
+.category-icon {
+  height: 100px;
+  width: 100px;
+}
+/* END Categories Section */
+
+footer {
+  background: grey;
+  bottom: 0px;
+  height: 20px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 99;
+}
