@@ -28,7 +28,6 @@ header .menuButton:hover{
 }
 
 /* START Search Bar from header  */
-
 #searchForm {
 	position: relative;
 	top: 25px;
@@ -54,7 +53,6 @@ header .menuButton:hover{
 #searchForm .searchButton:hover {
 	border: 1px solid grey;
 }
-
 /* END Search bar form header */
 
 

@@ -39,15 +39,15 @@
 
     <div class="heading">
         <h1 class="heading"> Create your own article </h1>
-        <p>Fill up these fields and press post when done...</p>
+        <p>Fill up these fields and press 'Submit' button when you're done...</p>
     </div>
 
 
-    <form action="submit_post.php" action="post">
+    <form class="articleForm" action="submit_post.php" action="post">
 
         <div>
             <label class="grid_3">Article title:</label>
-            <input class="grid_12 formItem" type="text" name="title" value="Please enter article title..." size="50" maxlength="50">
+            <input class="grid_12 formItem" type="text" name="title" placeholder="Please enter article title..." size="50" maxlength="50">
         </div>
 
         <div>
@@ -57,7 +57,7 @@
        
         <div>
             <label class="grid_3">Article content:</label>
-            <textarea class="grid_12 formItem" name="content" rows="20" cols="50"></textarea>
+            <textarea class="grid_12 formItem" name="content" rows="30" placeholder="Please enter article content..."></textarea>
         </div>
 
         <input class="formButton grid_2" type="submit" name="submit" value="Submit Article">

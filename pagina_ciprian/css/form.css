@@ -1,18 +1,18 @@
-form .formItem {
+.articleForm .formItem {
 	border: 2px solid lightgrey;
 	border-radius: 5px;
 }
 
-form .formItem:hover {
+.articleForm .formItem:hover {
 	border: 2px solid grey;
 }
 
-form div {
+.articleForm div {
 	clear: both;
 	display: block;
 }
 
-form .formButton {
+.articleForm .formButton {
 	padding: 10px 10px;
 	border-radius: 10px;
 	color: white;
@@ -20,6 +20,6 @@ form .formButton {
 	background: linear-gradient(brown, red);
 }
 
-form .formButton:hover {
+.articleForm .formButton:hover {
 	background: brown;
 }
