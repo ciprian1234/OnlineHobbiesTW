@@ -1,3 +1,9 @@
+.preload {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
 body {
   background: linear-gradient(to left, #232526, #414345);
 }
@@ -21,18 +27,38 @@ header .menuButton {
   text-decoration: none;
 }
 header .bigButton {
-  background: linear-gradient(brown, pink);
-  border-radius: 10px;
-  color: white;
-  display: inline-block;
-  float: right;
-  margin-right: 15px;
-  margin-top: 15px;
-  padding: 10px 20px;
+  display: block;
+  background: #bded7d;
+  color: #ffffff;
   text-decoration: none;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 15px 15px 0 25px;
+  border-radius: 2px;
+  position: relative;
+  float: right;
+  width: 150px;
+  height: 20px;
+  text-align: center;
 }
-header .bigButton:hover {
-  background: pink;
+header .bigButton::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+  box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0), 0 3px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+header .bigButton:hover::after {
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.2);
+}
+header .bigButton h3 {
+  margin-top: -10px;
 }
 .menuButton:hover {
   background-color: dodgerblue;
@@ -40,6 +66,11 @@ header .bigButton:hover {
 /*  Menu section */
 .category li {
   float: left;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  min-width: 150px;
 }
 .category li:hover > ul {
   border: 0;
@@ -47,7 +78,7 @@ header .bigButton:hover {
 }
 .category a {
   color: white;
-  display: block;
+  display: inline-block;
   padding: 0 20px;
   text-decoration: none;
 }
@@ -75,9 +106,7 @@ header .bigButton:hover {
   display: block;
   float: none;
   margin: 0;
-  margin-left: -20px;
-  width: 150px;
-  transition: all .4s ease;
+  width: 175px;
 }
 .category .subcategory .menuButton:hover {
   background: skyblue;
@@ -86,24 +115,46 @@ header .bigButton:hover {
 /* SEARCH BAR START */
 #searchForm {
   position: relative;
-  top: 25px;
+  top: 20px;
 }
 #searchForm .searchBar {
-  border: 1px solid lightblue;
+  position: relative;
+  margin-left: 25px;
+  padding: 0 20px;
+  width: 250px;
+  height: 40px;
   float: left;
-  height: 25px;
+  display: inline-block;
+  overflow: hidden;
+  color: white;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background: rgba(40, 40, 40, 0.4);
+  -webkit-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5) inset;
 }
 #searchForm .searchBar:hover {
-  border: 1px solid blue;
+  width: 350px;
+  opacity: 0.82;
+  color: #b5b5b5;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -moz-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -o-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
 }
-#searchForm .searchButton {
-  border: 1px solid lightgrey;
-  float: left;
-  height: 27px;
-  padding: 1px 5px;
-}
-#searchForm .searchButton:hover {
-  border: 1px solid grey;
+#searchForm .searchBar:focus {
+  width: 400px;
+  color: #ffffff;
+  outline: none;
+  -webkit-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -moz-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -o-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
 }
 /*SEARCH BAR END*/
 main {
