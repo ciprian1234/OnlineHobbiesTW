@@ -11,7 +11,6 @@ header {
 	height: 80px;
 	border-radius: 0px 0px 10px 10px;
     top:0;
-
 	border: 2px solid #3a5795;
 }
 
@@ -24,9 +23,39 @@ header .menuButton {
 	color: white;
 }
 
-.menuButton:hover{
-	background-color: dodgerblue;
+header .menuButton:hover{
+	background: dodgerblue;
 }
+
+/* START Search Bar from header  */
+
+#searchForm {
+	position: relative;
+	top: 25px;
+}
+
+#searchForm .searchBar {
+	height: 25px;
+	float: left;
+	border:1px solid lightblue;
+}
+
+#searchForm .searchBar:hover {
+	border:1px solid blue;
+}
+
+#searchForm .searchButton {
+	height: 27px;
+	float: left;
+	padding: 1px 5px;
+	border: 1px solid lightgrey;
+}
+
+#searchForm .searchButton:hover {
+	border: 1px solid grey;
+}
+
+/* END Search bar form header */
 
 
 header .bigButton {
@@ -34,7 +63,7 @@ header .bigButton {
 	display: inline-block;
 	padding: 10px 20px;
 	margin-top: 15px;
-	margin-right: 15px;
+	margin-right: 5px;
 	border-radius: 10px;
 	color: white;
 	text-decoration: none;
@@ -96,11 +125,10 @@ footer {
 .category li{
     float:left;
 }
+
 .category a{
     text-decoration: none;
     color:white;
-    display:block;
-    padding:0 20px;
 }
 .category .subcategory{
     
@@ -133,5 +161,4 @@ footer {
          border-radius: 0 0 20px 0;
          -webkit-border-radius: 0 0 20px 0;
          -moz-border-radius: 0 0 20px 0;
-        }
         }

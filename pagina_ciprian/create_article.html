@@ -12,18 +12,27 @@
 
 <body>
 
-<header class="container_16">
-    <ul>
-        <li> <a class="grid_2 menuButton" href="index.html">Home</a> </li>
-        <li> <a class="grid_2 menuButton" href="index.html">Categories</a> </li> 
+<header class="container_16 alpha omega">
+
+    <ul class="category">
+        <li class="grid_2 menuButton"> <a href="index.html">Home</a> </li>
+        <li class="grid_2 menuButton"> <a href="index.html">Categories</a>
+            <ul class="subcategory">
+                <li class="grid_2 menuButton"><a href="#">Sport</a></li></a>
+                <li class="grid_2 menuButton"><a href="#">Video games</a></li>
+                <li class="grid_2 menuButton"><a href="#">Movies</a></li>
+            </ul>
+        </li>
     </ul>
 
-        <a href="#" class="bigButton">
-            <h2>SIGN IN</h2>
-        </a>
-        <a href="#" class="bigButton">
-            <h2>ELSE</h2>
-        </a>
+    <form class="alpha omega" id="searchForm" action="#" method="get">
+    	<input class="searchBar" type="text" name="searchQuerry" value="" placeholder="Search for categories, hobbies, articles etc..." size="35" maxlength="50">
+    	<input class="searchButton" type="submit" name="submitButton" value="Search">
+    </form>
+
+
+    <a href="#" class="bigButton"> <h2>SIGN IN</h2> </a> 
+    <a href="#" class="bigButton"> <h2>ELSE</h2> </a>
 </header>
 
 	<main class="container_16">
