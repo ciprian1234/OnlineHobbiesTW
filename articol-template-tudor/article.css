@@ -5,6 +5,7 @@
 
 .articleImage {
 	float: left;
+	left:0px;
 	z-index: 10;
 }
 
