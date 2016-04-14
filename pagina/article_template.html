@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head><title>Articol Template</title>
+<link  rel="stylesheet" type="text/css" href="article.css">
+<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../css/960_16_col.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="../css/form.css">
+  <link rel="stylesheet" type="text/css" href="../css/article.css">
+</head>
+	
+<body>
+<header class="container_16 alpha omega">
+
+    <ul class="category">
+        <li class="grid_2 menuButton"> <a href="index.html">Home</a> </li>
+        <li class="grid_2 menuButton"> <a href="index.html">Categories</a>
+            <ul class="subcategory">
+                <li class="grid_2 menuButton"><a href="#">Sport</a></li></a>
+                <li class="grid_2 menuButton"><a href="#">Video games</a></li>
+                <li class="grid_2 menuButton"><a href="#">Movies</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <form class="alpha omega" id="searchForm" action="#" method="get">
+      <input class="searchBar" type="text" name="searchQuerry" value="" placeholder="Search for categories, hobbies, articles etc..." size="35" maxlength="500">
+    </form>
+
+
+    <a href="#" class="bigButton"><h3>SIGN IN</h3></a>
+</header>
+
+<main class="container_16">
+<img class="articleImage" src="images.png" alt="Mountain View" />
+
+  <div class="text" >
+  Nota IMDB *: 7.9
+  Regia : László Nemes
+  Durata : 107 min
+  Filmul unguresc Son of Saul castigator a numeroase premii, 
+  inclusiv a unui Oscar la categoria film stain, aduce pe ecrane o frantura din
+   viata unui membru al Sonderkommando, adica a unui prizonier al lagarului de exteminare Auschwitz a carui menire era, alaturi de alti osanditi, sa mentina in functiune crematoriile, fabricile mortii in care milioane de suflete si-au gasit sfarsitul. In vartejul ororilor si al anormalului la care este martor in fiecare zi, Saul decide sa salveze de la incinerare unu baiat, presupusul sau fiu si sa ii ofere o inmormantare normala. Un film dureros, greu digerabil, ce aminteste despre crimele odioase ale unui regim dement petrecute in lagare precum Auschwitz. Vizionare placuta!
+  </div>
+
+
+
+<form action="coments.php" method="post"> 
+  <p class="grid_16"> Lasa un comentariu:</p>
+  <div>
+    <label class="grid_2">Nume:</label>
+    <input class="grid_12 formItem" type="text" name="title" value="Please enter article title..." size="50" maxlength="50">
+  </div>
+
+  <div>
+    <label class="grid_2">Email:</label>
+    <input class="grid_12 formItem" type="text" name="title" value="Please enter email..." size="50" maxlength="50">
+  </div>
+  
+  <div>
+      <label class="grid_2">Comentariu:</label>
+      <textarea class="grid_12 formItem" name="content" rows="20" cols="50"></textarea>
+  </div>
+
+  <input class="formButton grid_2" type="submit" name="submit" value="Submit Comment">
+  <input class="formButton grid_2" type="reset">
+</form>
+</main>
+</body>
+</html>
