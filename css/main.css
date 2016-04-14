@@ -1,9 +1,3 @@
-.preload {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
-}
 body {
   background: linear-gradient(to left, #232526, #414345);
 }
@@ -102,7 +96,7 @@ header .bigButton h3 {
   border-radius: 0 0 20px 0;
 }
 .category .subcategory .menuButton {
-  background-color: #4BC970;
+  background-color: #5988c9;
   display: block;
   float: none;
   margin: 0;

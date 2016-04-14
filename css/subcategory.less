@@ -1,0 +1,71 @@
+
+// Width variables (appears count calculates by raw css)
+@width1: 150px; // Appears 2 times
+@width2: 200px; // Appears 3 times
+.nav {
+  background-color: #f1f1f1;
+  width:150px;
+  height:100%;
+  float:right;
+  li {
+    a {
+      color: #000000;
+      display: block;
+      padding: 3px 2px 3px 7px;
+      text-decoration: none;
+      &:hover {
+        background-color: #555555;
+        color: white;
+      }
+    }
+    a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+  }
+}
+
+.articlePreview {
+  .rating{
+    float:right;
+  }
+  .articleImage {
+    float: left;
+    margin-right:20px;
+    height:100%;
+      img{
+        width:150px;
+        height:80%;
+        border:1px solid red;
+      }
+
+  }
+  .articlePreviewContent{
+    font-size:15px;
+    margin-top:30px;
+  }
+  border: 2px solid black;
+  float:left;
+  margin-left:20px;
+  margin-top:10px;
+  width:50%;
+  height:200px;
+  overflow:hidden;
+}
+section {
+  .gotoBtn {
+    background: #bded7d;
+    border-radius: 2px;
+    color: #ffffff;
+    display: block;
+    float: left;
+    height: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding: 15px 15px 0 25px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    width: @width1;
+  }
+}
