@@ -154,10 +154,13 @@ header .bigButton h3 {
 main {
   background: linear-gradient(to bottom, #02AAB0, #00CDAC);
   border: 2px solid lightblue;
-  min-height: 600px;
+  height: auto;
   padding-bottom: 50px;
   position: relative;
   top: 90px;
+}
+main > .nav {
+  display: flex;
 }
 .heading {
   margin-top: 20px;
