@@ -85,22 +85,11 @@ header .bigButton h3 {
   color: #ffffff;
   margin: 0;
 }
-.category .subcategory li:first-child {
-  -moz-border-radius: 0 20px 0 0;
-  -webkit-border-radius: 0 20px 0 0;
-  border-radius: 0 20px 0 0;
-}
-.category .subcategory li:last-child {
-  -moz-border-radius: 0 0 20px 0;
-  -webkit-border-radius: 0 0 20px 0;
-  border-radius: 0 0 20px 0;
-}
 .category .subcategory .menuButton {
   background-color: #5988c9;
   display: block;
   float: none;
   margin: 0;
-  width: 175px;
 }
 .category .subcategory .menuButton:hover {
   background: skyblue;
@@ -168,7 +157,7 @@ main > .nav {
 }
 /*  Categories section */
 .category-container {
-  margin-left: 120px;
+  margin-left: 15%;
 }
 .item_box {
   background-color: dodgerblue;

@@ -3,35 +3,19 @@
 <head>
 <title>Videos</title>
 	<link rel="stylesheet" type="text/css" href="../css/reset.css">
-	<link rel="stylesheet" type="text/css" href="../css/960_16_col.css">
+	<link rel="stylesheet" type="text/css" href="../css/responsive.css">
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
 	<link rel="stylesheet" type="text/css" href="../css/subcategory.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<header class="container_16 alpha omega">
 
-    <ul class="category">
-        <li class="grid_2 menuButton"> <a href="index.html">Home</a> </li>
-        <li class="grid_2 menuButton"> <a href="index.html">Categories</a>
-            <ul class="subcategory">
-                <li class="grid_2 menuButton"><a href="#">Sport</a></li></a>
-                <li class="grid_2 menuButton"><a href="#">Video games</a></li>
-                <li class="grid_2 menuButton"><a href="#">Movies</a></li>
-            </ul>
-        </li>
-    </ul>
-
-    <form class="alpha omega search-container" id="searchForm" action="#" method="get">
-    	<input class="searchBar" type="text" name="searchQuerry" value="" placeholder="Search for categories, hobbies, articles etc..." size="35" maxlength="999">
-    </form>
+<?php
+    include 'resources/templates/header.php';
+?>
 
 
-
-   <a href="#" class="bigButton"><h3>Sign in</h3></a>
-</header>
-
-<main class="container_16">
+<main class="col-10 col-m-10" style="margin-left: 9%;">
 	<div class="leftBar">
 		<div class="nav">
 				<ul>
