@@ -131,13 +131,9 @@ header .bigButton h3 {
   transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
 }
 #searchForm .searchBar:focus {
-  width: 400px;
+  width:350px;
   color: #ffffff;
   outline: none;
-  -webkit-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
-  -moz-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
-  -o-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
-  transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
 }
 /*SEARCH BAR END*/
 main {
