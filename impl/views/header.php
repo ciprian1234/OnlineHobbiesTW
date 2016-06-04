@@ -67,6 +67,7 @@
         echo "</div>";
 	} else {
         echo '<div class="col-m-7 col-3 loginDiv">
+                
                  <a class="col-10 col-m-2" href="'. URL . 'login-with?provider=Facebook">
                      <button class=\'loginBtn loginBtn--facebook\'>Login with Facebook</button>
                  </a>

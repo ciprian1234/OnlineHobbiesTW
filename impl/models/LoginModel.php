@@ -37,12 +37,13 @@ class LoginModel extends Model
 
     public function registerUser($email, $name, $picture, $id)
     {
+        $this->db->beginTransaction();
         try {
-            $this->db->beginTransaction();
-            $stmt =  $this->db->exec("INSERT INTO users(email,username,picture,id) VALUES('$email','$name','$picture','$id')");
+            $this->db->exec("INSERT INTO users(email,username,picture,id) VALUES('$email','$name','$picture','$id')");
             $this->db->commit();
         }
         catch(PDOException $e){
+            $this->db->rollBack();
             echo $e->getMessage();
         }
     }

@@ -21,18 +21,19 @@ if(isset($_GET['provider']))
         if($user_profile && isset($user_profile->identifier))
         {
             $loginModel = new LoginModel();
-            $rank = $loginModel->verifyUser($user_profile->email,$user_profile->displayName);
-                if($rank == null) {
-                    $loginModel ->registerUser($user_profile->email,$user_profile->name ,$user_profile->photoURL , $user_profile->identifier);
+            $rank = $loginModel->verifyUser($user_profile->email);
+                if(!isset($rank)) {
+                    $loginModel ->registerUser($user_profile->email,$user_profile->displayName ,$user_profile->photoURL , $user_profile->identifier);
                 }
-            $_SESSION['name'] = $user_profile->displayName;
-            $_SESSION['id'] = $user_profile->identifier;
-            $_SESSION['email'] = $user_profile->email;
-            $_SESSION['provider'] = $provider;
-            $_SESSION['picture'] = $user_profile->photoURL;
-            if($loginModel->verifyUser($user_profile->email) > 0)
-                $_SESSION['status'] = "Admin";
-            else $_SESSION['status'] = "User";
+                $_SESSION['name'] = $user_profile->displayName;
+                $_SESSION['id'] = $user_profile->identifier;
+                $_SESSION['email'] = $user_profile->email;
+                $_SESSION['provider'] = $provider;
+                $_SESSION['picture'] = $user_profile->photoURL;
+                if($loginModel->verifyUser($user_profile->email) > 0)
+                    $_SESSION['status'] = "Admin";
+                else $_SESSION['status'] = "User";
+
         }
 
     }
