@@ -1,3 +1,293 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'zocial';
+  font-style: normal;
+  font-weight: normal;
+  src: url('http://weloveiconfonts.com/api/fonts/zocial/zocial-regular-webfont.eot');
+  src: url('http://weloveiconfonts.com/api/fonts/zocial/zocial-regular-webfont.eot?#iefix') format('eot'), url('http://weloveiconfonts.com/api/fonts/zocial/zocial-regular-webfont.woff') format('woff'), url('http://weloveiconfonts.com/api/fonts/zocial/zocial-regular-webfont.ttf') format('truetype'), url('http://weloveiconfonts.com/api/fonts/zocial/zocial-regular-webfont.svg#zocialregular') format('svg');
+}
+.zocial-acrobat:before {
+  content: "\00E3";
+}
+.zocial-amazon:before {
+  content: "a";
+}
+.zocial-android:before {
+  content: "&";
+}
+.zocial-angellist:before {
+  content: "\00D6";
+}
+.zocial-aol:before {
+  content: "\"";
+}
+.zocial-appnet:before {
+  content: "\00E1";
+}
+.zocial-appstore:before {
+  content: "A";
+}
+.zocial-bitbucket:before {
+  content: "\00E9";
+}
+.zocial-bitcoin:before {
+  content: "2";
+}
+.zocial-blogger:before {
+  content: "B";
+}
+.zocial-buffer:before {
+  content: "\00E5";
+}
+.zocial-call:before {
+  content: "7";
+}
+.zocial-cal:before {
+  content: ".";
+}
+.zocial-cart:before {
+  content: "\00C9";
+}
+.zocial-chrome:before {
+  content: "[";
+}
+.zocial-cloudapp:before {
+  content: "c";
+}
+.zocial-creativecommons:before {
+  content: "C";
+}
+.zocial-delicious:before {
+  content: "#";
+}
+.zocial-digg:before {
+  content: ";";
+}
+.zocial-disqus:before {
+  content: "Q";
+}
+.zocial-dribbble:before {
+  content: "D";
+}
+.zocial-dropbox:before {
+  content: "d";
+}
+.zocial-drupal:before {
+  content: "\00E4";
+}
+.zocial-dwolla:before {
+  content: "\00E0";
+}
+.zocial-email:before {
+  content: "]";
+}
+.zocial-eventasaurus:before {
+  content: "v";
+}
+.zocial-eventbrite:before {
+  content: "|";
+}
+.zocial-eventful:before {
+  content: "'";
+}
+.zocial-evernote:before {
+  content: "E";
+}
+.zocial-facebook:before {
+  content: "f";
+}
+.zocial-fivehundredpx:before {
+  content: "0";
+}
+.zocial-flattr:before {
+  content: "%";
+}
+.zocial-flickr:before {
+  content: "F";
+}
+.zocial-forrst:before {
+  content: ":";
+}
+.zocial-foursquare:before {
+  content: "4";
+}
+.zocial-github:before {
+  content: "g";
+}
+.zocial-gmail:before {
+  content: "m";
+}
+.zocial-google:before {
+  content: "G";
+}
+.zocial-googleplay:before {
+  content: "h";
+}
+.zocial-googleplus:before {
+  content: "+";
+}
+.zocial-gowalla:before {
+  content: "@";
+}
+.zocial-grooveshark:before {
+  content: "8";
+}
+.zocial-guest:before {
+  content: "?";
+}
+.zocial-html5:before {
+  content: "5";
+}
+.zocial-ie:before {
+  content: "6";
+}
+.zocial-instagram:before {
+  content: "\00DC";
+}
+.zocial-instapaper:before {
+  content: "I";
+}
+.zocial-intensedebate:before {
+  content: "{";
+}
+.zocial-itunes:before {
+  content: "i";
+}
+.zocial-klout:before {
+  content: "K";
+}
+.zocial-lanyrd:before {
+  content: "-";
+}
+.zocial-lastfm:before {
+  content: "l";
+}
+.zocial-linkedin:before {
+  content: "L";
+}
+.zocial-macstore:before {
+  content: "^";
+}
+.zocial-meetup:before {
+  content: "M";
+}
+.zocial-myspace:before {
+  content: "_";
+}
+.zocial-ninetyninedesigns:before {
+  content: "9";
+}
+.zocial-openid:before {
+  content: "o";
+}
+.zocial-opentable:before {
+  content: "\00C7";
+}
+.zocial-paypal:before {
+  content: "$";
+}
+.zocial-pinboard:before {
+  content: "n";
+}
+.zocial-pinterest:before {
+  content: "1";
+}
+.zocial-plancast:before {
+  content: "P";
+}
+.zocial-plurk:before {
+  content: "j";
+}
+.zocial-pocket:before {
+  content: "\00E7";
+}
+.zocial-podcast:before {
+  content: "`";
+}
+.zocial-posterous:before {
+  content: "~";
+}
+.zocial-print:before {
+  content: "\00D1";
+}
+.zocial-quora:before {
+  content: "q";
+}
+.zocial-reddit:before {
+  content: ">";
+}
+.zocial-rss:before {
+  content: "R";
+}
+.zocial-scribd:before {
+  content: "}";
+}
+.zocial-skype:before {
+  content: "S";
+}
+.zocial-smashing:before {
+  content: "*";
+}
+.zocial-songkick:before {
+  content: "k";
+}
+.zocial-soundcloud:before {
+  content: "s";
+}
+.zocial-spotify:before {
+  content: "=";
+}
+.zocial-statusnet:before {
+  content: "\00E2";
+}
+.zocial-steam:before {
+  content: "b";
+}
+.zocial-stripe:before {
+  content: "\00A3";
+}
+.zocial-stumbleupon:before {
+  content: "/";
+}
+.zocial-tumblr:before {
+  content: "t";
+}
+.zocial-twitter:before {
+  content: "T";
+}
+.zocial-viadeo:before {
+  content: "H";
+}
+.zocial-vimeo:before {
+  content: "V";
+}
+.zocial-vk:before {
+  content: "N";
+}
+.zocial-weibo:before {
+  content: "J";
+}
+.zocial-wikipedia:before {
+  content: ",";
+}
+.zocial-windows:before {
+  content: "W";
+}
+.zocial-wordpress:before {
+  content: "w";
+}
+.zocial-xing:before {
+  content: "X";
+}
+.zocial-yahoo:before {
+  content: "Y";
+}
+.zocial-yelp:before {
+  content: "y";
+}
+.zocial-youtube:before {
+  content: "U";
+}
 body {
   background: linear-gradient(to left, #232526, #414345);
 }
@@ -25,13 +315,12 @@ header .bigButton {
   background: #bded7d;
   color: #ffffff;
   text-decoration: none;
-  margin-top: 20px;
   margin-right: 20px;
   padding: 15px 15px 0 25px;
   border-radius: 2px;
   position: relative;
   float: right;
-  width: 150px;
+  width: 100px;
   height: 20px;
   text-align: center;
 }
@@ -121,19 +410,31 @@ header .bigButton h3 {
   box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5) inset;
 }
 #searchForm .searchBar:hover {
-  width: 350px;
+  width: 300px;
   opacity: 0.82;
   color: #b5b5b5;
   background: rgba(0, 0, 0, 0.4);
-  -webkit-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
-  -moz-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
-  -o-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
-  transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -webkit-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.35);
+  -moz-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.35);
+  -o-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.35);
+  transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.35);
 }
 #searchForm .searchBar:focus {
-  width:350px;
+  width: 300px;
   color: #ffffff;
   outline: none;
+}
+#profileImage {
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  float: left;
+}
+.profileDiv {
+  display: block;
+  float: right;
+  top: 0px;
+  height: 100%;
 }
 /*SEARCH BAR END*/
 main {
@@ -192,4 +493,66 @@ footer {
   text-align: center;
   width: 100%;
   z-index: 99;
+}
+.loginBtn {
+  box-sizing: border-box;
+  position: relative;
+  /* width: 13em;  - apply for fixed size */
+  margin: 0.2em;
+  width: 100%;
+  padding: 0 15px 0 46px;
+  border: none;
+  text-align: left;
+  line-height: 34px;
+  white-space: nowrap;
+  border-radius: 0.2em;
+  font-size: 16px;
+  color: #FFF;
+}
+.loginBtn:focus {
+  outline: none;
+}
+.loginBtn:active {
+  box-shadow: inset 0 0 0 32px rgba(0, 0, 0, 0.1);
+}
+.loginBtn:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 40px;
+}
+/* Facebook */
+.loginBtn--facebook {
+  background-color: #4C69BA;
+  background-image: linear-gradient(#4C69BA, #3B55A0);
+  /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
+  text-shadow: 0 -1px 0 #354C8C;
+}
+.loginBtn--facebook:before {
+  border-right: #364e92 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
+}
+.loginBtn--facebook:hover,
+.loginBtn--facebook:focus {
+  background-color: #5B7BD5;
+  background-image: linear-gradient(#5B7BD5, #4864B1);
+}
+.loginBtn--twitter {
+  background-color: #3CF;
+  margin-top: -20px;
+  background-image: linear-gradient(#56c5eb, #1798c4);
+  /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
+  text-shadow: 0 -1px 0 #354C8C;
+}
+.loginBtn--twitter:before {
+  border-right: #364e92 1px solid;
+  background: url('https://cdn2.iconfinder.com/data/icons/social-18/512/Twitter-3-20.png') 6px 6px no-repeat;
+}
+.loginBtn--twitter:hover,
+.loginBtn--twitter:focus {
+  background-color: #5B7BD5;
+  background-image: linear-gradient(#5B7BD5, #4864B1);
 }

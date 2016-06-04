@@ -14,9 +14,9 @@ class App
 			unset($url[0]);
 		}
 		require_once '../impl/controllers/' . $this->controller . '.php';
-		$modelPrefix = $this->controller;
 		$this->controller = new $this->controller;
-		$this->controller->loadModel($modelPrefix);
+		//$modelPrefix = $this->controller;
+		//$this->controller->loadModel($modelPrefix);
 		
 		if(isset($url[1])) {
 			if(method_exists($this->controller, $url[1])) {

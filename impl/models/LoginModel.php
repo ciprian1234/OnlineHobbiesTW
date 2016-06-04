@@ -9,14 +9,14 @@ class LoginModel extends Model {
 	
 	public function auth() {
 	
-	$username = $_POST['username'];
-	$password = $_POST['password'];
-	$stmt = $this->db->prepare("SELECT * FROM users 
-		WHERE username = :user AND password= :pass ");
-	$stmt->execute([':user' => $$username, ':pass' => $password]);
+	$stmt = $this->db->prepare("SELECT id_user FROM users 
+		WHERE username = :user AND password= :pass");
+	$stmt->execute([':user' => $_POST['username'], ':pass' => $_POST['password']]);
+	$count = $stmt->rowCount();
+	if($count > 0)
+		return true;
+	else
+		return false;
 	
-	$data = $stmt->fetchAll();
-	print_r($data);
-	echo 'asd';
 	}
 }
