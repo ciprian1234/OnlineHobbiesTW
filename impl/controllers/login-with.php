@@ -7,7 +7,7 @@
  */
 
 //session_start();
-include('../impl/controllers/config.php');
+include('config.php');
 include('../impl/hybridauth/Hybrid/Auth.php');
 $_SESSION['verific']="Am ajuns aici";
 if(isset($_GET['provider']))

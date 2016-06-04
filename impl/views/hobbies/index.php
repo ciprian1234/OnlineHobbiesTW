@@ -9,7 +9,7 @@
 				<ul>
 					<?php
 					foreach($hobbies as $hobby){
-						echo '<li><a href="#">'.$hobby->getTitle().'</a></li>';
+						echo '<li><a href="'.URL.'hobbies/index/'.$hobby->getId_category().'/'.$hobby->getId_hobby().'">'.$hobby->getTitle().'</a></li>';
 					}
 					?>
 					
@@ -17,14 +17,21 @@
 		</div>
 	</div>
 <div class="section">
-	<div class="articlePreview">
-		<div class="articleImage"><img src="resources/images/csgo.jpg" alt="Mountain View" 	></div>
-		<div class="rating">Rating</div>
-			<h3 class="articlePreviewContent">An arcade game or coin-op is a coin-operated entertainment machine typically installed in public businesses such as restaurants, bars and amusement arcades.
-			Most arcade games are video games, pinball machines, electro-mechanical games, redemption games or merchandisers..</h3>
-		<a href="#" class="gotoBtn"><h3>Read more</h3></a>
-	</div>
 	
+		
+		<?php
+		foreach($articles as $article) {
+		echo '<div class="articlePreview">';
+		echo 	'<div class="articleImage">
+					<img src="'.URL.$article->getImage().'" alt="Mountain View">
+				</div>
+				<h3>'.$article->getTitle().'</h3>
+				<div class="rating">Likes:'.$article->getLikes().' Dislikes:'.$article->getLikes().'</div>
+				<h3 class="articlePreviewContent">'.substr($article->getText(), 0, 300).'</h3>
+			<a href="#" class="gotoBtn"><h3>Read more</h3></a>
+			</div>';
+		}
+		?>
 </div>
 </main>
 

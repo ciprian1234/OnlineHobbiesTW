@@ -6,7 +6,7 @@ class View {
 		//echo 'main view <br>';
 	}
 	
-	public function render($name, $content=[]) {
+	public function render($name, $categories, $hobbies=[], $articles=[]) {
 		require 'views/' . $name . '.php';
 	}
 }

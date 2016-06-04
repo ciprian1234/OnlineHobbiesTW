@@ -5,11 +5,11 @@
  * Date: 6/4/2016
  * Time: 12:20 AM
  */
-$config = array("base_url" => "http://localhost.donici.ro/impl/hybridauth/",
+$config = array("base_url" => "http://localhost.ciprian.ro/impl/hybridauth/",
     "providers" => array (
         "Google" => array (
             "enabled" => true,
-            "keys"    => array ( "id" => "365758358483-a1n39iuhtamkjou01lk8q0d9a8vtq721.apps.googleusercontent.com", "secret" => "Vtl4tuDyf8CcRy8VlEW6JnUs" ),
+            "keys"    => array ( "id" => "YOUR_GOOGLE_API_KEY", "secret" => "YOUR_GOOGLE_API_SECRET" ),
 
         ),
 
