@@ -30,11 +30,11 @@
         <li class="col-m-2 col-1 menuButton"> <a href="<?php echo URL . 'home'?>">Home</a> </li>
         <li class="col-m-2 col-1 menuButton"> <a href="category">Categories</a>
             <ul class="subcategory">
-				<?php
-				foreach($categories as $category){
-					echo '<li class="col-m-4 col-4 menuButton"><a href="'.URL.'hobbies/index/'.$category->getId_category().'">'.$category->getTitle().'</a></li>';
-				}
-				?>
+                <?php
+                foreach($categories as $category){
+                    echo '<li class="col-m-4 col-4 menuButton"><a href="'.URL.'hobbies/index/'.$category->getId_category().'">'.$category->getTitle().'</a></li>';
+                }
+                ?>
             </ul>
         </li>
     </ul>
@@ -55,22 +55,23 @@
                echo $_SESSION['picture'] . "\"";
 		echo "</img>";
         echo "  <div class=\"dropdown\">
-            <a class=' profileButton' href='#'>My hobbies</a>
-            <a class=' profileButton' href='#'>My articles</a>
-            <a class=' profileButton' href='#'>My profile</a>
-            <a class=' profileButton' href=\"". URL ."logout\">Logout</a>
+            <a class='profileButton' href='#'>My hobbies</a>
+            <a class='profileButton' href='#'>My articles</a>
+            <a class='profileButton' href='#'>My profile</a>
+            <a class='profileButton' href=\"". URL ."logout\">Logout</a>
         </div>";
         echo "</div>";
 		echo "<h3>" . $_SESSION['name'] . "</h3>";
 		echo "<h5>" . $_SESSION['email'] . "</h5>";
+        echo "<h5>" . $_SESSION['status'] . "</h5>";
         echo "</div>";
 	} else {
-        echo '<div class="col-m-7 col-5 loginDiv">
-                 <a class="col-7 col-m-2" href="'. URL . 'login-with?provider=Facebook">
-                    <button class="loginBtn loginBtn--facebook">Login with Facebook</button>
+        echo '<div class="col-m-7 col-3 loginDiv">
+                 <a class="col-10 col-m-2" href="'. URL . 'login-with?provider=Facebook">
+                     <button class=\'loginBtn loginBtn--facebook\'>Login with Facebook</button>
                  </a>
-                 <a class="col-7 col-m-2" href="' . URL . 'login-with?provider=Google">
-                    <button class="loginBtn loginBtn--google">Login with Google</button>
+                 <a class="col-10 col-m-2" href="' . URL . 'login-with?provider=Google">
+                      <button class=\'loginBtn loginBtn--google\'>Login with Google</button>
 	             </a>
 	          </div>';
 
