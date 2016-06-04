@@ -3,7 +3,7 @@ include '/views/header.php';
 ?>
 
 
-<main class="col-10 col-m-10" style="margin-left: 9%;">
+<main class="col-10 col-m-10 mainPage">
 
 
   <div class="col-11 article">

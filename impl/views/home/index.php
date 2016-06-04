@@ -1,6 +1,6 @@
 <?php require_once 'views/header.php' ?>
 
-<main class="col-m-10 col-10" style = "margin-left:9%">
+<main class="col-m-10 col-10 mainPage">
 
     <div class="heading">
         <h1 class="heading"> Categories </h1>

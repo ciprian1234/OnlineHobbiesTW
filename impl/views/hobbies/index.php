@@ -3,8 +3,8 @@
 	require_once 'views/header.php'; 
 ?>
 
-<main class="col-10 col-m-10" style="margin-left: 9%;">
-	<div class="leftBar">
+<main class="col-10 col-m-10 mainPage">
+	<div class="col-1">
 		<div class="nav">
 				<ul>
 					<?php
@@ -21,7 +21,7 @@
 		
 		<?php
 		foreach($articles as $article) {
-		echo '<div class="articlePreview">';
+		echo '<div class="col-10 col-m-10 articlePreview">';
 		echo 	'<div class="articleImage">
 					<img src="'.URL.$article->getImage().'" alt="Mountain View">
 				</div>

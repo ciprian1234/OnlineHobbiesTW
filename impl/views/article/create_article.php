@@ -4,7 +4,7 @@ include '/views/header.php';
 ?>
 
 
-	<main class="col-m-10 col-10">
+	<main class="col-m-10 col-10 mainPage">
 
     <div class="heading">
         <h1 class="heading"> Create your own article </h1>
