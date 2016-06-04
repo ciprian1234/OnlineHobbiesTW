@@ -180,6 +180,17 @@ header {
   top:0px;
   height:100%;
 }
+
+.profileButton{
+  background-color: @subcategoryMenuButton;
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 /*SEARCH BAR END*/
 main {
   background: @mainPageColor;
@@ -285,7 +296,6 @@ footer {
   text-shadow: 0 -1px 0 #354C8C;
 
   &:before {
-    border-right: #364e92 1px solid;
     background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
   }
 
@@ -295,21 +305,21 @@ footer {
     background-image: linear-gradient(#5B7BD5, #4864B1);
   }
 }
-.loginBtn--twitter {
-  background-color: #3CF;
+/* Google */
+.loginBtn--google {
+  /*font-family: "Roboto", Roboto, arial, sans-serif;*/
   margin-top:-20px;
-  background-image: linear-gradient(#56c5eb, #1798c4);
-  /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
-  text-shadow: 0 -1px 0 #354C8C;
-
+  background: #DD4B39;
   &:before {
-    border-right: #364e92 1px solid;
-    background: url('https://cdn2.iconfinder.com/data/icons/social-18/512/Twitter-3-20.png') 6px 6px no-repeat;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;
   }
-
   &:hover,
   &:focus {
-    background-color: #5B7BD5;
-    background-image: linear-gradient(#5B7BD5, #4864B1);
+    background: #E74B37;
   }
+}
+.image-holder
+{
+  display:block;
+  vertical-align: top;
 }

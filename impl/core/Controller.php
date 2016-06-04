@@ -7,6 +7,8 @@ abstract class Controller
 	function __construct(){
 		$this->view = new View();
 	}
+	public abstract function index();
+	
 	
 	/*public function loadModel($name){
 		$modelName = $name.'Model';

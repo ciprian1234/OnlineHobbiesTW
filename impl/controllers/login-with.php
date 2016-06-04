@@ -7,7 +7,7 @@
  */
 
 //session_start();
-include('config.php');
+include('../impl/controllers/config.php');
 include('../impl/hybridauth/Hybrid/Auth.php');
 $_SESSION['verific']="Am ajuns aici";
 if(isset($_GET['provider']))
@@ -52,6 +52,6 @@ if(isset($_GET['provider']))
 
         echo "<hr /><h3>Trace</h3> <pre>" . $e->getTraceAsString() . "</pre>";
     }
-    header('location: ../impl');
+    header("Location:" . $_SERVER['HTTP_REFERER']);
 }
 ?>

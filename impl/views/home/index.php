@@ -10,9 +10,9 @@
 	<ul class="category-container">
 	
 		<?php
-		foreach($categories as $category){
+		foreach($content as $category){
 		    echo '<li class="col-m-10 col-3 item_box">
-			<a class="category-link" href="'.URL.'hobbies/index/'.$category->getId_category().'">
+			<a class="category-link" href="#">
 				<h5 class="category-title">'.$category->getTitle().'</h5>
 				<img class="category-icon" alt="Games" src="../../impl/'.$category->getImage().'">
             </a>
