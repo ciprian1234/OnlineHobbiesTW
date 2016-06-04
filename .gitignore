@@ -1,2 +1,5 @@
 .idea/
 ProiectWeb.iml
+impl/views/hobbies/index - Copy.php
+impl/models/HomeModel.php
+impl/views/hobby_page.php

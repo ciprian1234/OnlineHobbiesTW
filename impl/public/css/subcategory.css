@@ -20,29 +20,76 @@
   color: white;
 }
 .articlePreview {
-  border: 2px solid black;
+  border: 1px dotted dodgerblue;
+  border-radius: 50px;
   float: right;
   margin-left: 20px;
   margin-right: 30px;
   margin-top: 10px;
   overflow: hidden;
+  cursor: default;
 }
 .articlePreview .rating {
   float: right;
+  margin-right: 20px;
 }
 .articlePreview .articleImage {
   float: left;
   margin-right: 20px;
-  height: 100%;
+  height: 80%;
 }
 .articlePreview .articleImage img {
-  width: 150px;
-  height: 80%;
-  border: 1px solid red;
+  width: 100px;
+}
+.articlePreview .articleTitle {
+  color: #111;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
 }
 .articlePreview .articlePreviewContent {
   font-size: 15px;
   margin-top: 30px;
+}
+.articlePreview .readMoreButton {
+  text-decoration: none;
+  color: blue;
+  float: right;
+  margin-top: 10%;
+}
+.articlePreview .readMoreButton:hover {
+  color: darkblue;
+}
+.articlePreview .likeCounter {
+  width: 50px;
+  height: 20px;
+  color: white;
+}
+.articlePreview .likeCounter:before {
+  float: left;
+  margin-left: 10px;
+  pointer-events: none;
+  content: "";
+}
+.articlePreview .like {
+  background: linear-gradient(to top, #ADD100, #7B920A);
+}
+.articlePreview .like:before {
+  font-family: FontAwesome;
+  content: "\f087";
+}
+.articlePreview .dislike {
+  background: linear-gradient(to top, #D31027, #EA384D);
+}
+.articlePreview .dislike:before {
+  font-family: FontAwesome;
+  content: "\f088";
+}
+.articlePreview:hover {
+  background: linear-gradient(to left, #ffb347, #ffcc33);
 }
 section .gotoBtn {
   background: #bded7d;

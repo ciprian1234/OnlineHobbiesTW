@@ -8,7 +8,9 @@
         <link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/form.css">
         <link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/article.css">
         <link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/subcategory.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
@@ -67,6 +69,7 @@
         echo "</div>";
 	} else {
         echo '<div class="col-m-7 col-3 loginDiv">
+                
                  <a class="col-10 col-m-2" href="'. URL . 'login-with?provider=Facebook">
                      <button class=\'loginBtn loginBtn--facebook\'>Login with Facebook</button>
                  </a>
