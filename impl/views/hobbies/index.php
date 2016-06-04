@@ -21,14 +21,14 @@
 		
 		<?php
 		foreach($articles as $article) {
-		echo '<div class="col-10 col-m-10 articlePreview">';
+		echo '<div class="articlePreview">';
 		echo 	'<div class="articleImage">
 					<img src="'.URL.$article->getImage().'" alt="Mountain View">
 				</div>
 				<h3>'.$article->getTitle().'</h3>
 				<div class="rating">Likes:'.$article->getLikes().' Dislikes:'.$article->getLikes().'</div>
 				<h3 class="articlePreviewContent">'.substr($article->getText(), 0, 300).'</h3>
-			<a href="#" class="gotoBtn"><h3>Read more</h3></a>
+			<a href="'.URL.'article/index/'.$article->getId_article().'" class="gotoBtn"><h3>Read more</h3></a>
 			</div>';
 		}
 		?>

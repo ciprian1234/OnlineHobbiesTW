@@ -12,6 +12,23 @@ class ArticleModel extends Model {
         //echo "Home_Model <br>";
     }
 	
+	
+	function getArticleById($id_article) {
+		require 'ArticleEntity.php';
+		
+		$stmt = $this->db->prepare("SELECT * from articles where id_article = :id_art");
+		$id_art = intVal($id_article);
+		if(!$stmt->execute( [':id_art' => $id_art] )){
+			echo 'Statement not working';
+			var_dump($id_art);
+		}
+		
+		$row = $stmt->fetch();
+		$article = new ArticleEntity($row['id_article'], $row['id_user'], $row['id_hobby'], $row['likes'], $row['dislikes'],
+													$row['title'], $row['text'], $row['image']);
+		return $article;
+	}
+	
 	function getArticlesByIdHobby($id_hobby) {
 		require 'ArticleEntity.php';
 		

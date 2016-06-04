@@ -1,5 +1,5 @@
 <?php
-include '/views/header.php';
+	require_once 'views/header.php'; 
 ?>
 
 
@@ -7,13 +7,13 @@ include '/views/header.php';
 
 
   <div class="col-11 article">
-	  <img class="col-3 col-m-5 articleImage" src="../impl/public/images/cpp.png" alt="Mountain View" />
-	  <h2>Article</h2>
-	  <h3>Rating</h3>
-	  <h3>Alte informatii</h3>
-	  
-  </div>
+	<?php
+		echo '<img class="col-3 col-m-5 articleImage" src="'.URL.$articles->getImage().'" alt="Mountain View" />';
+		echo '<h2>'.$articles->getTitle().'</h2>';
+		echo '<p>'.$articles->getText().'</p>';
+	?>
 
+  </div>
 
 
 <form class="articleForm" action="submit_post.php" method="post">
@@ -39,5 +39,5 @@ include '/views/header.php';
 
 </main>
 <?php
-include '/views/footer.php';
+include 'views/footer.php';
 ?>

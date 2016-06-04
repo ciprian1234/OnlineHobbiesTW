@@ -13,7 +13,21 @@ class Article extends Controller {
         //echo 'error controller <br>';
     }
 
-    public function index(){
-        $this->view->render('article/article_template');
+    public function index($param){
+		
+		require __DIR__.'/../models/CategoryModel.php';
+		$catModel = new CategoryModel();
+		$categories = $catModel->getCategories();
+		
+		require __DIR__.'/../models/HobbyModel.php';
+		$hobModel = new HobbyModel();
+		$hobbies = $hobModel->getHobbies($param[0]);
+		
+		require __DIR__.'/../models/ArticleModel.php';
+		$artModel = new ArticleModel();
+		
+		$article = $artModel->getArticleById($param[0]);
+		
+        $this->view->render('article/index', $categories, $hobbies, $article);
     }
 }
