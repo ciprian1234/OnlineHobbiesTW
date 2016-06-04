@@ -2,12 +2,12 @@
 <html>
 <head>
 	<title>Online Hobbies</title>
-        <link rel="stylesheet" type="text/css" href="../../impl/public/css/reset.css">
-        <link rel="stylesheet" type="text/css" href="../../impl/public/css/responsive.css">
-        <link rel="stylesheet" type="text/css" href="../../impl/public/css/main.css">
-        <link rel="stylesheet" type="text/css" href="../../impl/public/css/form.css">
-        <link rel="stylesheet" type="text/css" href="../../impl/public/css/article.css">
-        <link rel="stylesheet" type="text/css" href="../../impl/public/css/subcategory.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/responsive.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/main.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/form.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/article.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/subcategory.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="./fbapp/fb.js">x</script>
 </head>
@@ -20,7 +20,7 @@
         <li class="col-m-2 col-2 menuButton"> <a href="category">Categories</a>
             <ul class="subcategory">
 				<?php
-				foreach($content as $category){
+				foreach($categories as $category){
 					echo '<li class="col-m-4 col-4 menuButton"><a href="#">'.$category->getTitle().'</a></li>';
 				}
 				?>
@@ -43,9 +43,9 @@
 		echo "</img>";
 		echo "<h3>" . $_SESSION['name'] . "</h3>";
 		echo "<h5>" . $_SESSION['email'] . "</h5>";
-		echo "<a href=\"logout\" class=\"col-6 bigButton\"><h3>Logout</h3></a>";
+		echo '<a href="'.URL.'logout"'."class=\"col-6 bigButton\"><h3>Logout</h3></a>";
 	} else {
-		  echo "<a class='col-7 col-m-2' href=\"login-with?provider=Facebook\">
+		  echo '<a class="col-7 col-m-2" href="'.URL."login-with?provider=Facebook\">
 		<button class='loginBtn loginBtn--facebook'>Login with facebook</button>
 	</a>";
 		  echo "<a class='col-7 col-m-2' href=\"login-with?provider=Twitter\">
