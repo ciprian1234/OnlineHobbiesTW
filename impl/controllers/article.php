@@ -29,10 +29,30 @@ class Article extends Controller {
 		$article = $artModel->getArticleById($param[0]);
 
 		require __DIR__.'/../models/CommentModel.php';
-		$commentModel = new CommentModel();
-		$commentList = $commentModel->getCommentList($param[0]);
+		$comModel = new CommentModel();
+		$comments = $comModel->getComments($param[0]);
 
-
-        $this->view->render('article/index', $categories, $hobbies, $article,$commentList);
+		
+        $this->view->render('article/index', $categories, $hobbies, $article, $comments);
     }
+	
+	public function submitComment($param) {
+		
+		require __DIR__.'/../models/CategoryModel.php';
+		$catModel = new CategoryModel();
+		$categories = $catModel->getCategories();
+		
+		
+		require __DIR__.'/../models/ArticleModel.php';
+		$artModel = new ArticleModel();
+		$article = $artModel->getArticleById($param[0]);
+		
+		
+		require __DIR__.'/../models/CommentModel.php';
+		$comModel = new CommentModel();
+		$comModel->insertComment($param[0], $_POST['content']);
+		$comments = $comModel->getComments($param[0]);
+		
+		$this->view->render('article/index', $categories, [], $article, $comments);
+	}
 }

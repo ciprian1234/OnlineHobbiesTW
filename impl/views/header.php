@@ -1,4 +1,3 @@
-<?php require 'models/UserEntity.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +10,8 @@
         <link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/subcategory.css">
         <link href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<!--        <script src="--><?php //echo URL;?><!--public/scripts/comment.js"></script>-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
 				$(document).ready(function() {
 					// Hide all dropdowns initially.
@@ -32,7 +30,7 @@
 <header class="col-m-10 col-10">
     <ul class="category">
         <li class="col-m-2 col-1 menuButton"> <a href="<?php echo URL . 'home'?>">Home</a> </li>
-        <li class="col-m-2 col-1 menuButton"> <a href="category">Categories</a>
+        <li class="col-m-2 col-1 menuButton"> <a href="<?php echo URL . 'home'?>">Categories</a>
             <ul class="subcategory">
                 <?php
                 foreach($categories as $category){
@@ -59,9 +57,9 @@
                echo $user->getImage() . "\"";
 		echo "</img>";
         echo "  <div class=\"dropdown\">
-            <a class='profileButton' href='#'>My hobbies</a>
-            <a class='profileButton' href='#'>My articles</a>
-            <a class='profileButton' href='#'>My profile</a>
+			<a class='profileButton' href='#'>My profile</a>
+            <a class='profileButton' href=\"". URL. "user/myArticles\">My articles</a>
+			<a class='profileButton' href=\"". URL. "user/createArticle\">Create Article</a>
             <a class='profileButton' href=\"". URL ."logout\">Logout</a>
         </div>";
         echo "</div>";

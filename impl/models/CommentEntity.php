@@ -1,78 +1,62 @@
 <?php
-class Comment
+class CommentEntity
 {
-private $data = array();
-    private $user_name;
-    private $id_comment;
-    private $id_article;
-    private $article_text;
-    private $user_photo;
+	private $id_comment;
+	private $id_article;
+	private $id_user;
+	private $text;
+	//User
+	private $username;
+	private $email;
+	private $image;
+	
 
-public function __construct($idart,$name,$photo,$text)
-{
-    $this->user_name = $name;
-    $this->id_article = $idart;
-    $this->user_photo = $photo;
-    $this->article_text = $text;
+	public function __construct($id_comment, $id_article, $id_user, $text, $username, $email, $image){
+		$this->id_comment = $id_comment;
+		$this->id_article = $id_article;
+		$this->id_user = $id_user;
+		$this->text = $text;
+		$this->username = $username;
+		$this->email = $email;
+		$this->image = $image;
+	}
 
-}
-
-    public function getUserPhoto(){
-        return $this->user_photo;
-    }
-
-    /**
-     * @return array
-     */
-    public function getData()
+	//user
+	public function getUsername()
     {
-        return $this->data;
+        return $this->username;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getUserName()
+	
+	public function getEmail()
     {
-        return $this->user_name;
+        return $this->email;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getIdComment()
+	
+	public function getImage()
+    {
+        return $this->image;
+    }
+	//
+	
+    public function getId_comment()
     {
         return $this->id_comment;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getIdArticle()
+    public function getId_user()
+    {
+        return $this->id_user;
+    }
+
+    public function getId_article()
     {
         return $this->id_article;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getArticleText()
+    public function getText()
     {
-        return $this->article_text;
-    }
-
-    public function render(){
-        return '<div class="col-3-offset col-5 col-m-10 comment">
-         <div class="commentAvatar">
-         <img src="'.$this->getUserPhoto().'" width="50px" height="50px">
-         </div>
-         <div class="commentName">
-         <h3 class="commentNameV">'.$this->getUserName().'</h3>
-         </div>
-         <p class="commentContent">'.$this->getArticleText().'</p>
-         </div>';
+        return $this->text;
     }
 }
-
 
 ?>

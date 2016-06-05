@@ -1,6 +1,5 @@
 <?php
 	require_once 'views/header.php';
-    require_once('..\impl\models\CommentModel.php');
 ?>
 
 
@@ -9,52 +8,44 @@
 
   <div class="col-11 article">
 	<?php
-		echo '<img class="col-2 col-m-5 articleImage" src="'.URL.$articles->getImage().'" alt="Mountain View" />';
+		echo '<img class="col-2 col-m-5 articleImage" src="'.URL.$articles->getImage().'" alt="Img" />';
 		echo '<h2>'.$articles->getTitle().'</h2>';
 		echo '<p>'.$articles->getText().'</p>';
 	?>
-
   </div>
-
-    <?php
-            foreach($commentsList as $c){
-                echo $c->render();
+  
+	<?php
+            foreach($comments as $comment){
+                echo '<div class="col-3-offset col-5 col-m-10 comment">
+						<div class="commentAvatar">
+							<img src="'.$comment->getImage().'" width="50px" height="50px">
+						</div>
+						<div class="commentName">
+							<h3 class="commentNameV">'.$comment->getUsername().'</h3>
+						</div>
+							<p class="commentContent">'.$comment->getText().'</p>
+					</div>';
             }
     ?>
 
-<form class="articleForm" action="submitComment.php" method="post">
+
+
     <?php
-        $inputHidden="text";
-        $labelHidden="block";
-        $nameValue = "";
-        $emailValue = "";
-        $commentModel = new CommentModel();
-        $photo = "https://upload.wikimedia.org/wikipedia/en/e/ee/Unknown-person.gif";
+        if(!isset($_SESSION['user'])) {
+			echo '<div class="col-3-offset col-5 col-m-10"><p> You must be logged in to leave a comment!</p></div>';
+		}
+		else {
+			echo'<form class="articleForm" action="'.URL.'article/submitComment/'.$articles->getId_article().'" method="post">';
+			echo 	'<div>
+						<label class="col-3-offset col-5">Comment:</label>
+						<textarea class="col-3-offset col-5 col-m-10 formItem" name="content" rows="20" placeholder="Please enter article content..."></textarea>
+					</div>
 
-        //$commentModel ->addComment(11,$photo,"Ceva valoros","Ceva ceva");
-        if(isset($_SESSION['user'])) {
-            $user = unserialize($_SESSION['user']);
-            $inputHidden = "hidden";
-            $labelHidden = "none";
-            $nameValue = $user->getUsername();
-            $emailValue = $user->getEmail();
-            $photo = $user->getImage();
-        }
-            echo '<input value="'.$articles->getId_Article().'" type="hidden" id="id_article">';
-            echo '<input value="'.$photo.'" type="hidden" id="photo">';
-            echo '<div>
-                     <label class="col-3-offset col-5" style="display:'.$labelHidden.'">Name:</label>
-                     <input class="col-3-offset col-5 col-m-10 formItem" id="name" value="'.$nameValue.'" type="'.$inputHidden.'" name="title" placeholder="Please enter your name" size="50" maxlength="50">
-                  </div>';
+				<input class="formButton col-3-offset col-2 col-m-5" type="submit" name="submit" value="Submit Comment">
+				<input class="formButton col-1-offset col-2 col-m-5" type="reset">
+				</form>';
+		}	
     ?>
-
-    <div>
-        <label class="col-3-offset col-5">Comment:</label>
-        <textarea class="col-3-offset col-5 col-m-10 formItem" id="text" name="content" rows="20" placeholder="Please enter article content..."></textarea>
-    </div>
-
-    <input class="formButton col-3-offset col-2 col-m-5" type="submit" id="submit" value="Submit">
-</form>
 
 </main>
 <?php

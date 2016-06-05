@@ -17,4 +17,14 @@ class HobbyModel extends Model {
 		}
 		return $hobbies;
 	}
+	
+	function getAllHobbies() {
+		require 'HobbyEntity.php';
+		$hobbies = [];
+		$query = "select * from hobbies";
+		foreach ($this->db->query($query) as $row) {
+			array_push($hobbies, new HobbyEntity($row['id_hobby'], $row['id_category'], $row['title'], $row['description'], $row['image']) );	
+		}
+		return $hobbies;
+	}
 }

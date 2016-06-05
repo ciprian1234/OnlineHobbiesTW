@@ -6,5 +6,6 @@
  * Time: 5:03 PM
  */
 session_destroy();
-header("Location: {$_SERVER['HTTP_REFERER']}");
+//header("Location: {$_SERVER['HTTP_REFERER']}");
+header("Location:".URL."home/index");
 ?>

@@ -8,7 +8,6 @@
 
 //session_start();
 require_once('../impl/models/LoginModel.php');
-require('../impl/models/UserEntity.php');
 include('../impl/controllers/config.php');
 include('../impl/hybridauth/Hybrid/Auth.php');
 $_SESSION['verific']="Am ajuns aici";

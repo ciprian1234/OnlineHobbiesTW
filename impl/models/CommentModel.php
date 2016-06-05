@@ -9,39 +9,38 @@ class CommentModel extends Model{
 
     function __construct() {
         parent::__construct();
-        //echo "Home_Model <br>";
     }
 
-    public function getCommentList($id){
+    public function getComments($id_article){
         require 'CommentEntity.php';
-        $comments = array();
-        $result = $this->db->prepare("SELECT id_article,id_comment,user_photo,user_name,text FROM comments WHERE id_article = :id");
-        $result->execute([':id' => $id]);
-        $idNum = (int)$id;
-        if(!$result->execute([':id' => $idNum])){
+        $result = $this->db->prepare("SELECT * FROM comments natural join users WHERE id_article = :id order by time desc");
+		
+        $id_art = (int)$id_article;
+        if(!$result->execute([':id' => $id_art])){
             echo 'Statement not working';
-            var_dump($idNum);
+            var_dump($id_article);
         }
-
         $comments = [];
         while ($row = $result->fetch()) {
-            array_push($comments, new Comment($row['id_article'], $row['user_name'], $row['user_photo'], $row['text']));
-        }
+            array_push($comments, new CommentEntity($row['id_comment'], $row['id_article'], $row['id_user'], $row['text'], 
+													$row['username'], $row['email'], $row['picture']));
+        };
         return $comments;
     }
-
-    public function addComment($id_article,$user_photo,$user_name,$text){
-        $this->db->beginTransaction();
+	
+	public function insertComment($id_article, $text){
+		
+		$this->db->beginTransaction();
         try {
-            var_dump($id_article);
-            $this->db->exec("INSERT INTO comments(id_article,user_name,text,user_photo) VALUES($id_article,'$user_name','$text','$user_photo')");
-            var_dump($id_article);
+			$user = unserialize($_SESSION['user']);
+			$id_user = $user->getId_user();
+            $this->db->exec("INSERT INTO comments(id_article, id_user, text) VALUES('$id_article','$id_user','$text')");
             $this->db->commit();
         }
         catch(PDOException $e){
             $this->db->rollBack();
             echo $e->getMessage();
         }
-    }
+	}
 
 }
