@@ -27,7 +27,12 @@ class Article extends Controller {
 		$artModel = new ArticleModel();
 		
 		$article = $artModel->getArticleById($param[0]);
-		
-        $this->view->render('article/index', $categories, $hobbies, $article);
+
+		require __DIR__.'/../models/CommentModel.php';
+		$commentModel = new CommentModel();
+		$commentList = $commentModel->getCommentList($param[0]);
+
+
+        $this->view->render('article/index', $categories, $hobbies, $article,$commentList);
     }
 }

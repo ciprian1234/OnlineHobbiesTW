@@ -10,19 +10,19 @@
         <link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/subcategory.css">
         <link href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-			<script type="text/javascript">
-				$(document).ready(function() {
-					// Hide all dropdowns initially.
-					$('.dropdown').hide();
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                // Hide all dropdowns initially.
+                $('.dropdown').hide();
 
-					// Bind click event
-					$('.image-holder').click(function() {
-						$(this).children('.dropdown').slideToggle('slow');
-					});
-				});
-			</script>
+                // Bind click event
+                $('.image-holder').click(function() {
+                    $(this).children('.dropdown').slideToggle('slow');
+                });
+            });
+        </script>
 </head>
 
 <body>
