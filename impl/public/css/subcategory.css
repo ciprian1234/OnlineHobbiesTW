@@ -72,7 +72,6 @@
   float: left;
   margin-left: 10px;
   pointer-events: none;
-  content: "";
 }
 .articlePreview .like {
   background: linear-gradient(to top, #ADD100, #7B920A);

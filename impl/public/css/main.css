@@ -577,3 +577,34 @@ footer {
   display: block;
   vertical-align: top;
 }
+.comment {
+  position: relative;
+  background-color: skyblue;
+  border: 1px solid white;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  -moz-box-shadow: 2px 2px 0 #c2c2c2;
+  -webkit-box-shadow: 2px 2px 0 #c2c2c2;
+  box-shadow: 2px 2px 0 #c2c2c2;
+}
+.comment .commentAvatar {
+  position: absolute;
+  left: -75px;
+  top: 10px;
+}
+.comment .commentAvatar:after {
+  font-family: FontAwesome;
+  content: "\f101";
+  margin-top: 10px;
+  font-size: 30px;
+  float: right;
+}
+.comment .commentName {
+  font-size: 15px;
+  color: black;
+  padding-bottom: 10px;
+}
+.comment p {
+  font-size: 18px;
+  line-height: 1.5;
+}

@@ -7,6 +7,7 @@
 @subcategoryMenuButtonHover:skyblue;
 @pageBackground: linear-gradient(to left, #232526 , #414345);
 @mainPageColor: linear-gradient(to left, #ECE9E6 , #FFFFFF);
+@commentBackgroundColor:skyblue;
 @import url('http://weloveiconfonts.com/api/?family=zocial');
 body {
   background: @pageBackground;
@@ -334,4 +335,41 @@ footer {
 {
   display:block;
   vertical-align: top;
+}
+
+.comment{
+
+  position:relative;
+  background-color: @commentBackgroundColor;
+  border:1px solid white;
+  margin-bottom:20px;
+
+  border-radius:10px;
+
+  -moz-box-shadow:2px 2px 0 #c2c2c2;
+  -webkit-box-shadow:2px 2px 0 #c2c2c2;
+  box-shadow:2px 2px 0 #c2c2c2;
+  .commentAvatar{
+    position:absolute;
+    left:-75px;
+    top:10px;
+      &:after{
+        font-family:FontAwesome;
+        content:"\f101";
+        margin-top:10px;
+        font-size:30px;
+        float:right;
+      }
+
+  }
+  .commentName{
+    font-size:15px;
+    color:black;
+    padding-bottom: 10px;
+  }
+
+  p{
+    font-size:18px;
+    line-height:1.5;
+  }
 }

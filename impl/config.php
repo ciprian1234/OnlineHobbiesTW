@@ -1,2 +1,2 @@
 <?php
-define ('URL', 'http://localhost.ciprian.ro/impl/');
+define ('URL', 'http://localhost.donici.ro/impl/');

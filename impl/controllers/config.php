@@ -5,7 +5,7 @@
  * Date: 6/4/2016
  * Time: 12:20 AM
  */
-$config = array("base_url" => "http://localhost.ciprian.ro/impl/hybridauth/",
+$config = array("base_url" => "http://localhost.donici.ro/impl/hybridauth/",
     "providers" => array (
         "Google" => array (
             "enabled" => true,

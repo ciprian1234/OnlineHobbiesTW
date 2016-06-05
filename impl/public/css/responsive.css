@@ -36,19 +36,20 @@
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
+
+    .col-1-offset {margin-left: 8.33%;}
+    .col-2-offset {margin-left: 16.66%;}
+    .col-3-offset {margin-left: 25%;}
+    .col-4-offset {margin-left: 33.33%;}
+    .col-5-offset {margin-left: 41.66%;}
+    .col-6-offset {margin-left: 50%;}
+    .col-7-offset {margin-left: 58.33%;}
+    .col-8-offset {margin-left: 66.66%;}
+    .col-9-offset {margin-left: 75%;}
+    .col-10-offset {margin-left: 83.33%;}
+    .col-11-offset {margin-left: 91.66%;}
+    .col-12-offset {margin-left: 100%;}
 }
-.col-1-offset {margin-left: 8.33%;}
-.col-2-offset {margin-left: 16.66%;}
-.col-3-offset {margin-left: 25%;}
-.col-4-offset {margin-left: 33.33%;}
-.col-5-offset {margin-left: 41.66%;}
-.col-6-offset {margin-left: 50%;}
-.col-7-offset {margin-left: 58.33%;}
-.col-8-offset {margin-left: 66.66%;}
-.col-9-offset {margin-left: 75%;}
-.col-10-offset {margin-left: 83.33%;}
-.col-11-offset {margin-left: 91.66%;}
-.col-12-offset {margin-left: 100%;}
 /*.col-m-1,.col-m-2,.col-m-3,.col-m-4,.col-m-5,.col-m-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12{*/
 
 /*}*/
