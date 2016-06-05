@@ -7,7 +7,8 @@
  */
 
 //session_start();
-require_once('..\impl\models\LoginModel.php');
+require_once('../impl/models/LoginModel.php');
+require('../impl/models/UserEntity.php');
 include('../impl/controllers/config.php');
 include('../impl/hybridauth/Hybrid/Auth.php');
 $_SESSION['verific']="Am ajuns aici";
@@ -21,16 +22,19 @@ if(isset($_GET['provider']))
         if($user_profile && isset($user_profile->identifier))
         {
             $loginModel = new LoginModel();
-            $rank = $loginModel->verifyUser($user_profile->email);
-                if(!isset($rank)) {
+			$user = $loginModel->getUserByEmail($user_profile->email);
+            //$rank = $loginModel->verifyUser($user_profile->email);
+                if(!isset($user)) {
                     $loginModel ->registerUser($user_profile->email,$user_profile->displayName ,$user_profile->photoURL , $user_profile->identifier);
+					$user = $loginModel->getUserByEmail($user_profile->email);
                 }
-                $_SESSION['name'] = $user_profile->displayName;
-                $_SESSION['id'] = $user_profile->identifier;
-                $_SESSION['email'] = $user_profile->email;
+				$_SESSION['user'] = serialize($user);
+                //$_SESSION['name'] = $user_profile->displayName;
+               //$_SESSION['id'] = $user_profile->identifier;
+                //$_SESSION['email'] = $user_profile->email;
                 $_SESSION['provider'] = $provider;
-                $_SESSION['picture'] = $user_profile->photoURL;
-                if($loginModel->verifyUser($user_profile->email) > 0)
+                //$_SESSION['picture'] = $user_profile->photoURL;
+				if($user->getRank() > 0)
                     $_SESSION['status'] = "Admin";
                 else $_SESSION['status'] = "User";
 

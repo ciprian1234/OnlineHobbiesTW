@@ -1,3 +1,4 @@
+<?php require 'models/UserEntity.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,19 +11,19 @@
         <link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/subcategory.css">
         <link href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                // Hide all dropdowns initially.
-                $('.dropdown').hide();
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					// Hide all dropdowns initially.
+					$('.dropdown').hide();
 
-                // Bind click event
-                $('.image-holder').click(function() {
-                    $(this).children('.dropdown').slideToggle('slow');
-                });
-            });
-        </script>
+					// Bind click event
+					$('.image-holder').click(function() {
+						$(this).children('.dropdown').slideToggle('slow');
+					});
+				});
+			</script>
 </head>
 
 <body>
@@ -46,15 +47,15 @@
     </form>
     
 	<?php
-
-	if (isset($_SESSION['name'])) {
+	if (isset($_SESSION['user'])) {
+		$user = unserialize($_SESSION['user']);
         echo '<div class="col-m-7 col-5 profileDiv">';
         echo "<div class='image-holder'>";
 		echo "<img id='profileImage' src=\"";
            if($_SESSION['provider'] == "Facebook")
-               echo "http://graph.facebook.com/" . $_SESSION['id'] . "/picture?width=75&height=75\"";
+               echo "http://graph.facebook.com/" . $user->getId() . "/picture?width=75&height=75\"";
            else
-               echo $_SESSION['picture'] . "\"";
+               echo $user->getImage() . "\"";
 		echo "</img>";
         echo "  <div class=\"dropdown\">
             <a class='profileButton' href='#'>My hobbies</a>
@@ -63,8 +64,8 @@
             <a class='profileButton' href=\"". URL ."logout\">Logout</a>
         </div>";
         echo "</div>";
-		echo "<h3>" . $_SESSION['name'] . "</h3>";
-		echo "<h5>" . $_SESSION['email'] . "</h5>";
+		echo "<h3>" . $user->getUsername() . "</h3>";
+		echo "<h5>" . $user->getEmail() . "</h5>";
         echo "<h5>" . $_SESSION['status'] . "</h5>";
         echo "</div>";
 	} else {

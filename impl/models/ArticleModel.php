@@ -29,6 +29,26 @@ class ArticleModel extends Model {
 		return $article;
 	}
 	
+	function getArticlesByIdUser($id_user) {
+		require 'ArticleEntity.php';
+		
+		$stmt = $this->db->prepare("SELECT * from articles where id_user = :id_usr");
+		
+		$id_usr = intVal($id_user);
+		if(!$stmt->execute( [':id_usr' => $id_usr] )){
+			echo 'Statement not working';
+			var_dump($id_usr);
+		}
+		
+		$articles = [];
+		while ($row = $stmt->fetch()) {
+			array_push($articles, new ArticleEntity($row['id_article'], $row['id_user'], $row['id_hobby'], $row['likes'], $row['dislikes'],
+													$row['title'], $row['text'], $row['image']));
+		}
+		return $articles;
+	}
+	
+	
 	function getArticlesByIdHobby($id_hobby) {
 		require 'ArticleEntity.php';
 		
@@ -47,6 +67,7 @@ class ArticleModel extends Model {
 		}
 		return $articles;
 	}
+	
 	
 	function getArticlesByIdCategory($id_category) {
 		require 'ArticleEntity.php';

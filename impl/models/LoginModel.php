@@ -47,5 +47,23 @@ class LoginModel extends Model
             echo $e->getMessage();
         }
     }
+	
+	public function getUserByEmail($email) {
+		
+		$stmt = $this->db->prepare("SELECT * from users where email = :email");
+		
+		if(!$stmt->execute( [':email' => $email] )){
+			echo 'Statement not working';
+			var_dump($email);
+		}
+		
+		if($stmt->rowCount() > 0){
+			$row = $stmt->fetch();
+			return new UserEntity($row['id_user'], $row['email'], $row['username'], $row['picture'], $row['id'],
+														$row['rank']);
+		}
+		return null;
+		
+	}
 
 }
