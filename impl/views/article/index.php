@@ -18,15 +18,7 @@
 
     <?php
             foreach($commentsList as $c){
-                echo "<div class=\"col-3-offset col-5 col-m-10 comment\">";
-                    echo "<div class=\"commentAvatar\">";
-                    echo "<img src=\"".$c->getUserPhoto()."\" width=\"50px\" height=\"50px\">";
-                    echo "</div>";
-                    echo "<div class=\"commentName\">";
-                    echo "<h3 class=\"commentNameV\">".$c->getUserName()."</h3>";
-                    echo "</div>";
-                    echo "<p class=\"commentContent\">".$c->getArticleText()."</p>";
-                echo "</div>";
+                echo $c->render();
             }
     ?>
 

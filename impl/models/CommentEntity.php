@@ -17,7 +17,7 @@ public function __construct($idart,$idcom,$name,$photo,$text)
     $this->article_text = $text;
 
 }
-    
+
     public function getUserPhoto(){
         return $this->user_photo;
     }
@@ -62,6 +62,18 @@ public function __construct($idart,$idcom,$name,$photo,$text)
         return $this->article_text;
     }
 
+    public function render(){
+        return '<div class="col-3-offset col-5 col-m-10 comment">
+         <div class="commentAvatar">
+         <img src="'.$this->getUserPhoto().'" width="50px" height="50px">
+         </div>
+         <div class="commentName">
+         <h3 class="commentNameV">'.$this->getUserName().'</h3>
+         </div>
+         <p class="commentContent">'.$this->getArticleText().'</p>
+         </div>';
+    }
 }
+
 
 ?>
