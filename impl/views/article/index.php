@@ -22,28 +22,38 @@
             }
     ?>
 
-<form class="articleForm" action="submit_post.php" method="post">
-
+<form class="articleForm" action="submitComment.php" method="post">
     <?php
-        if(!isset($_SESSION['name']))
-        echo "<div>
-                 <label class=\"col-3-offset col-5\">Name:</label>
-                 <input class=\"col-3-offset col-5 col-m-10 formItem\" type=\"text\" name=\"title\" placeholder=\"Please enter article title...\" size=\"50\" maxlength=\"50\">
-              </div>
-            
-              <div>
-                 <label class=\"col-3-offset col-5\">Email:</label>
-                 <input class=\"col-3-offset col-5 formItem\" type=\"text\" name=\"title\" placeholder=\"Please enter article title...\" size=\"50\" maxlength=\"50\">
-              </div>";
+        $inputHidden="text";
+        $labelHidden="block";
+        $nameValue = "";
+        $emailValue = "";
+        $commentModel = new CommentModel();
+        $photo = "https://upload.wikimedia.org/wikipedia/en/e/ee/Unknown-person.gif";
+
+        //$commentModel ->addComment(11,$photo,"Ceva valoros","Ceva ceva");
+        if(isset($_SESSION['user'])) {
+            $user = unserialize($_SESSION['user']);
+            $inputHidden = "hidden";
+            $labelHidden = "none";
+            $nameValue = $user->getUsername();
+            $emailValue = $user->getEmail();
+            $photo = $user->getImage();
+        }
+            echo '<input value="'.$articles->getId_Article().'" type="hidden" id="id_article">';
+            echo '<input value="'.$photo.'" type="hidden" id="photo">';
+            echo '<div>
+                     <label class="col-3-offset col-5" style="display:'.$labelHidden.'">Name:</label>
+                     <input class="col-3-offset col-5 col-m-10 formItem" id="name" value="'.$nameValue.'" type="'.$inputHidden.'" name="title" placeholder="Please enter your name" size="50" maxlength="50">
+                  </div>';
     ?>
 
     <div>
         <label class="col-3-offset col-5">Comment:</label>
-        <textarea class="col-3-offset col-5 col-m-10 formItem" name="content" rows="20" placeholder="Please enter article content..."></textarea>
+        <textarea class="col-3-offset col-5 col-m-10 formItem" id="text" name="content" rows="20" placeholder="Please enter article content..."></textarea>
     </div>
 
-    <input class="formButton col-3-offset col-2 col-m-5" type="submit" name="submit" value="Submit Comment">
-    <input class="formButton col-1-offset col-2 col-m-5" type="reset">
+    <input class="formButton col-3-offset col-2 col-m-5" type="submit" id="submit" value="Submit">
 </form>
 
 </main>

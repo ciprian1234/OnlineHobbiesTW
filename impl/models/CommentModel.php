@@ -25,9 +25,23 @@ class CommentModel extends Model{
 
         $comments = [];
         while ($row = $result->fetch()) {
-            array_push($comments, new Comment($row['id_article'], $row['id_comment'], $row['user_name'], $row['user_photo'], $row['text']));
+            array_push($comments, new Comment($row['id_article'], $row['user_name'], $row['user_photo'], $row['text']));
         }
         return $comments;
+    }
+
+    public function addComment($id_article,$user_photo,$user_name,$text){
+        $this->db->beginTransaction();
+        try {
+            var_dump($id_article);
+            $this->db->exec("INSERT INTO comments(id_article,user_name,text,user_photo) VALUES($id_article,'$user_name','$text','$user_photo')");
+            var_dump($id_article);
+            $this->db->commit();
+        }
+        catch(PDOException $e){
+            $this->db->rollBack();
+            echo $e->getMessage();
+        }
     }
 
 }

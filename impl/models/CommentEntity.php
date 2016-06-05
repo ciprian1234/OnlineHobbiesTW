@@ -8,10 +8,9 @@ private $data = array();
     private $article_text;
     private $user_photo;
 
-public function __construct($idart,$idcom,$name,$photo,$text)
+public function __construct($idart,$name,$photo,$text)
 {
     $this->user_name = $name;
-    $this->id_comment = $idcom;
     $this->id_article = $idart;
     $this->user_photo = $photo;
     $this->article_text = $text;
