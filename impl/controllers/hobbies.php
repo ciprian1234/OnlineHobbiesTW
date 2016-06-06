@@ -4,9 +4,8 @@ class Hobbies extends Controller {
 	function __construct(){
 		parent::__construct();
 	}
-	private $id_category = 1;
+	//private $id_category = 1;
 	public function index($param){
-		
 		require __DIR__.'/../models/CategoryModel.php';
 		$catModel = new CategoryModel();
 		$categories = $catModel->getCategories();

@@ -7,9 +7,15 @@
 	
 	
 		<h1>User Profile</h1>
-		<?php
+		<h2>Your Hobby list:</h2>
 		
-		?>
+		<ul>
+			<?php
+			foreach($hobbies as $hobby) {
+				echo '<li>?PHP Title Hobby <a href='.'user/deletePreference/+id_prefPHP.>Delete</a></li>';
+			}
+			?>
+		</ul>
 </div>
 </main>
 
