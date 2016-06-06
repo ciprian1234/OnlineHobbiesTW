@@ -72,20 +72,4 @@ class User extends Controller {
 		header('Location:'.URL.'user/myArticles');
         //$this->view->render('user/createArticle', $categories, $hobbies, [], []);
     }
-	
-	//admin only
-	public function createCategory(){
-		require __DIR__.'/../models/UserModel.php';
-		$userModel = new UserModel();
-		$userModel->createCategory();
-		header('Location:'.URL.'user/myProfile');
-	}
-	
-	public function createHobby(){
-		require __DIR__.'/../models/UserModel.php';
-		$userModel = new UserModel();
-		$userModel->createHobby();
-		header('Location:'.URL.'user/myProfile');
-		header('Location:'.URL.'user/myProfile');
-	}
 }

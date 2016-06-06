@@ -11,18 +11,8 @@
         <link href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-			<script type="text/javascript">
-				$(document).ready(function() {
-					// Hide all dropdowns initially.
-					$('.dropdown').hide();
-
-					// Bind click event
-					$('.image-holder').click(function() {
-						$(this).children('.dropdown').slideToggle('slow');
-					});
-				});
-			</script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="<?php echo URL;?>public/scripts/scripts.js"></script>
 </head>
 
 <body>
@@ -42,13 +32,13 @@
     </ul>
 
     <form class=" search-container" id="searchForm" action="#" method="get">
-    	<input class="searchBar" type="text" name="searchQuerry" value="" placeholder="Search for categories, hobbies, articles etc..." size="35" maxlength="999">
+    	<input class="searchBar mHidden" type="text" name="searchQuerry" value="" placeholder="Search for categories, hobbies, articles etc..." size="35" maxlength="999">
     </form>
     
 	<?php
 	if (isset($_SESSION['user'])) {
 		$user = unserialize($_SESSION['user']);
-        echo '<div class="col-m-7 col-5 profileDiv">';
+        echo '<div class="col-m-5 col-5 mHidden profileDiv">';
         echo "<div class='image-holder'>";
 		echo "<img id='profileImage' src=\"";
            if($_SESSION['provider'] == "Facebook")

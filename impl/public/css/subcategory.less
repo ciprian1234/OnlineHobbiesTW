@@ -9,20 +9,47 @@
   margin-right: 30px;
   float: left;
 
-  li {
-    a {
-      color: #000000;
+
+  .hobbyBox {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    display: none;
+    background:rgba(0,0,0,0.8);
+    color:white;
+
+    //center
+    margin-right: auto;
+    margin-left: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 98 !important;
+    img {
+      margin-left: auto;
+      margin-right: auto;
       display: block;
-      padding: 3px 2px 3px 7px;
-      text-decoration: none;
-      &:hover {
-        background-color: #555555;
-        color: white;
-      }
     }
-    a.active {
-      background-color: #4CAF50;
+  }
+
+  .buttonSubscribe{
+    display:block;
+    padding: 3px 3px 3px 3px;
+    background: linear-gradient(to top, #ADD100, #7B920A);
+  }
+  .hobbySubcategory{
+    color: #000000;
+    display: block;
+    margin-left:-10px;
+    padding: 3px 2px 3px 7px;
+    text-decoration: none;
+    &:hover{
+      background-color: #555555;
       color: white;
+    }
+    &:active{
+      background-color:#4CAF50;
+      color:white;
     }
   }
 }

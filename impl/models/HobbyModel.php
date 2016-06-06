@@ -11,7 +11,7 @@ class HobbyModel extends Model {
 		
 		require 'HobbyEntity.php';
 		$hobbies = [];
-		$query = "select * from hobbies where id_category='$id_category'";
+		$query = "select * from hobbies where id_category='$id_category[0]'";
 		foreach ($this->db->query($query) as $row) {
 			array_push($hobbies, new HobbyEntity($row['id_hobby'], $row['id_category'], $row['title'], $row['description'], $row['image']) );	
 		}
