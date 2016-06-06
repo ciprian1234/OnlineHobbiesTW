@@ -83,13 +83,22 @@
     font-size: 15px;
     margin-top: 30px;
   }
-  .readMoreButton {
-    text-decoration: none;
-    color: blue;
-    float: right;
-    margin-top: 10%;
-    &:hover {
-      color: darkblue;
+
+  .buttonDiv{
+    float:right;
+
+    .readMoreButton {
+      text-decoration: none;
+      color: blue;
+      &:hover {
+        color: darkblue;
+      }
+    }
+    .deleteArticleButton{
+      color:red;
+      &:hover{
+        color:darkred;
+      }
     }
   }
   .likeCounter {

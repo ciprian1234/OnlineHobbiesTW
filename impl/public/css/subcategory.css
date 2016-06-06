@@ -79,14 +79,21 @@
   font-size: 15px;
   margin-top: 30px;
 }
-.articlePreview .readMoreButton {
+.articlePreview .buttonDiv {
+  float: right;
+}
+.articlePreview .buttonDiv .readMoreButton {
   text-decoration: none;
   color: blue;
-  float: right;
-  margin-top: 10%;
 }
-.articlePreview .readMoreButton:hover {
+.articlePreview .buttonDiv .readMoreButton:hover {
   color: darkblue;
+}
+.articlePreview .buttonDiv .deleteArticleButton {
+  color: red;
+}
+.articlePreview .buttonDiv .deleteArticleButton:hover {
+  color: darkred;
 }
 .articlePreview .likeCounter {
   width: 50px;
