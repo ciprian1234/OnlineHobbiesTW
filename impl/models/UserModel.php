@@ -30,5 +30,61 @@ class UserModel extends Model {
 		return $articles;
 	}
 	
-	
+	function createCategory() {
+		
+		$this->db->beginTransaction();
+        try {
+			//get image from user
+			if(!empty($_FILES['image']['name'])){
+				$image = 'public/images/';
+				$file_name = $_FILES['image']['name'];
+				$file_tmp =$_FILES['image']['tmp_name'];
+				$file_type=$_FILES['image']['type'];
+			  
+				$image = $image.$file_name;
+				move_uploaded_file($file_tmp, __DIR__.'/../public/images/'.$file_name);
+		    }
+			else
+				$image = 'public/images/cpp.png';
+		    $description = "Description...";
+			$stmt = $this->db->prepare("INSERT into categories(title, description, image) values(:title, :description, :image)");
+			if(!$stmt->execute( [':title' => $_POST['title'], ':description' => $description, ':image' => $image] )){
+				echo 'Statement for insert category not working!';
+			}
+            $this->db->commit();
+        }
+        catch(PDOException $e){
+            $this->db->rollBack();
+            echo $e->getMessage();
+        }
 	}
+	
+	function createHobby() {
+		
+		$this->db->beginTransaction();
+        try {
+			//get image from user
+			if(!empty($_FILES['image']['name'])){
+				$image = 'public/images/';
+				$file_name = $_FILES['image']['name'];
+				$file_tmp =$_FILES['image']['tmp_name'];
+				$file_type=$_FILES['image']['type'];
+			  
+				$image = $image.$file_name;
+				move_uploaded_file($file_tmp, __DIR__.'/../public/images/'.$file_name);
+		    }
+			else
+				$image = 'public/images/cpp.png';
+			$stmt = $this->db->prepare("INSERT into hobbies(id_category, title, description, image) values(:id_category, :title, :description, :image)");
+			if(!$stmt->execute( [':id_category' => $_POST['category'] ,':title' => $_POST['title'], ':description' => $_POST['content'], ':image' => $image] )){
+				echo 'Statement for insert hobby not working!';
+			}
+            $this->db->commit();
+        }
+        catch(PDOException $e){
+            $this->db->rollBack();
+            echo $e->getMessage();
+        }
+	}
+	
+}

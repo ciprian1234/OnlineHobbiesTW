@@ -23,8 +23,8 @@ class ArticleModel extends Model {
 			
 			
 			//get image from user
-			$image = 'public/images/';
-			if(isset($_FILES['image'])){
+			if(!empty($_FILES['image']['name'])){
+				$image = 'public/images/';
 				$file_name = $_FILES['image']['name'];
 				$file_tmp =$_FILES['image']['tmp_name'];
 				$file_type=$_FILES['image']['type'];
@@ -32,7 +32,9 @@ class ArticleModel extends Model {
 			  
 				$image = $image.$file_name;
 				move_uploaded_file($file_tmp, __DIR__.'/../public/images/'.$file_name);
-		   }
+			}
+			else
+				$image = 'public/images/cpp.png';
 			$stmt = $this->db->prepare("INSERT into articles(id_user, id_hobby, title, text, image) values(:id_user, :id_hobby, :title, :text, :image)");
 			if(!$stmt->execute( [':id_user' => $id_user, ':id_hobby' => $_POST['hobby'], ':title' => $_POST['title'], ':text' => $_POST['content'], ':image' => $image] )){
 				echo 'Statement for insert article not working!';
@@ -107,7 +109,7 @@ class ArticleModel extends Model {
 		$stmt = $this->db->prepare("SELECT * from categories c, hobbies h, articles a
 		where c.id_category = :id_cat and c.id_category=h.id_category and h.id_hobby = a.id_hobby");
 		
-		$id_cat = intVal($id_category[0]);
+		$id_cat = intVal($id_category);
 		if(!$stmt->execute( [':id_cat' => $id_cat] )){
 			echo 'Statement not working';
 			var_dump($id_cat);
