@@ -48,7 +48,7 @@ if(optionArray[option].localeCompare(s1.value)==0){
     </div>
 
 
-    <form class="articleForm" action="<?php echo URL.'user/submitArticle';?>" method="post">
+    <form class="articleForm" action="<?php echo URL.'user/submitArticle';?>" method="post" enctype = "multipart/form-data">
 		
 		<?php
 		//var_dump($categories);
@@ -57,11 +57,6 @@ if(optionArray[option].localeCompare(s1.value)==0){
 			foreach($categories as $category)
 				echo '<option value="'.$category->getId_category().'">'.$category->getTitle().'</option>';
 		echo '</select>';
-		
-		//echo '<select id="hobby" name="hobby"></select>';
-		//	foreach($hobbies as $hobby)
-		//		echo '<option value="'.$hobby->getId_hobby().'">'.$hobby->getTitle().'</option>';
-		//echo '</select>';
 		?>
 		<select id="hobby" name="hobby"></select>
         <div>

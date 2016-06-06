@@ -5,6 +5,24 @@ class User extends Controller {
         parent::__construct();
         //echo 'error controller <br>';
     }
+	
+	public function myProfile(){
+		
+		require __DIR__.'/../models/CategoryModel.php';
+		$catModel = new CategoryModel();
+		$categories = $catModel->getCategories();
+		
+		require __DIR__.'/../models/UserModel.php';
+		$userModel = new UserModel();
+		$user=unserialize($_SESSION['user']);
+		
+		if($user->getRank() > 0) {
+			$this->view->render('user/adminProfile', $categories, [], [], []);
+		}
+		else {
+			$this->view->render('user/userProfile', $categories, [], [], []);
+		}
+	}
 
     public function myArticles(){
 		

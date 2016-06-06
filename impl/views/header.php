@@ -57,7 +57,7 @@
                echo $user->getImage() . "\"";
 		echo "</img>";
         echo "  <div class=\"dropdown\">
-			<a class='profileButton' href='#'>My profile</a>
+			<a class='profileButton' href=\"".URL."user/myProfile\">My profile</a>
             <a class='profileButton' href=\"". URL. "user/myArticles\">My articles</a>
 			<a class='profileButton' href=\"". URL. "user/createArticle\">Create Article</a>
             <a class='profileButton' href=\"". URL ."logout\">Logout</a>
