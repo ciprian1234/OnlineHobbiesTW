@@ -13,6 +13,56 @@ class ArticleModel extends Model {
     }
 	
 	
+	function submitArticle() {
+		require 'ArticleEntity.php';
+		
+		$this->db->beginTransaction();
+        try {
+			$user = unserialize($_SESSION['user']);
+			$id_user = $user->getId_user();
+			
+			
+			//get image from user
+			$image = 'public/images/';
+			if(isset($_FILES['image'])){
+				$errors= array();
+				$file_name = $_FILES['image']['name'];
+				$file_size =$_FILES['image']['size'];
+				$file_tmp =$_FILES['image']['tmp_name'];
+				$file_type=$_FILES['image']['type'];
+				$file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
+			  
+				$expensions= array("jpeg","jpg","png");
+			  
+				if(in_array($file_ext, $expensions)=== false){
+					$errors[]="extension not allowed, please choose a JPEG or PNG file.";
+				}
+			  
+				if($file_size > 10097152){
+					$errors[]='File size must be excately 10 MB';
+				}
+				
+				var_dump($errors);
+				if(empty($errors)==true){
+					$image .= $file_name;
+					
+					move_uploaded_file($file_tmp, URL.'/public/images/'.$file_name);
+				}else{
+					print_r($errors);
+				}
+		   }
+			$stmt = $this->db->prepare("INSERT into articles(id_user, id_hobby, title, text, image) values(:id_user, :id_hobby, :title, :text, :image)");
+			if(!$stmt->execute( [':id_user' => $id_user, ':id_hobby' => $_POST['hobby'], ':title' => $_POST['title'], ':text' => $_POST['content'], ':image' => $image] )){
+				echo 'Statement for insert article not working!';
+			}
+            $this->db->commit();
+        }
+        catch(PDOException $e){
+            $this->db->rollBack();
+            echo $e->getMessage();
+        }
+	}
+	
 	function getArticleById($id_article) {
 		require 'ArticleEntity.php';
 		

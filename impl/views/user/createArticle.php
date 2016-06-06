@@ -9,11 +9,12 @@ require 'views/header.php';
 		s2.innerHTML="";
 		var optionArray=[];optionArray.push(" ");
 		var ar2=[" "];
+		var ar3=[" "];
 		<?php foreach($hobbies as $hobie){
 				?>
 		        optionArray.push("<?php echo $hobie->getId_category();?>");
 				    ar2.push("<?php echo $hobie->getTitle(); ?>");
-					
+					ar3.push("<?php echo $hobie->getId_hobby(); ?>")
 		<?php } ?>
 		
 		//document.write(2)
@@ -29,7 +30,8 @@ var i=-1;
 if(optionArray[option].localeCompare(s1.value)==0){
 	
 		var newOption = document.createElement("option");
-		newOption.value = ar2[i];
+		newOption.value = ar3[i];
+		newOption.id=ar3[i];
 		newOption.innerHTML = ar2[i];
 		s2.options.add(newOption);}
 		
@@ -46,7 +48,7 @@ if(optionArray[option].localeCompare(s1.value)==0){
     </div>
 
 
-    <form class="articleForm" action="submit_post.php" method="post">
+    <form class="articleForm" action="<?php echo URL.'user/submitArticle';?>" method="post">
 		
 		<?php
 		//var_dump($categories);

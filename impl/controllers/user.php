@@ -48,11 +48,10 @@ class User extends Controller {
     }
 	
 	public function submitArticle(){
-		
-		require __DIR__.'/../models/UserModel.php';
-		$userModel = new UserModel();
-		$user=unserialize($_SESSION['user']);
-
-        $this->view->render('user/createArticle', $categories, $hobbies, [], []);
+		require __DIR__.'/../models/ArticleModel.php';
+		$articleModel = new ArticleModel();
+		$articleModel->submitArticle();
+		header('Location:'.URL.'user/myArticles');
+        //$this->view->render('user/createArticle', $categories, $hobbies, [], []);
     }
 }
