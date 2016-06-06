@@ -10,6 +10,7 @@ $(document).ready(function(){
     });
 
 });
+
 $(document).ready(function() {
     // Hide all dropdowns initially.
     $('.dropdown').hide();
@@ -17,5 +18,13 @@ $(document).ready(function() {
     // Bind click event
     $('.image-holder').click(function() {
         $(this).children('.dropdown').slideToggle('slow');
+    });
+});
+
+$(document).ready(function(){
+    $('.toggleButton').click(function(){
+        $(this).next().slideToggle();
+        console.log("Toggle");
+        return false;
     });
 });
