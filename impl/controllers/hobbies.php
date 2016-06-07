@@ -23,4 +23,30 @@ class Hobbies extends Controller {
 			$articles = $artModel->getArticlesByIdHobby($param[1]);
 		$this->view->render('hobbies/index', $categories, $hobbies, $articles);
 	}
+	
+	public function deletePreference($param){
+		require __DIR__.'/../models/CategoryModel.php';
+		$catModel = new CategoryModel();
+		$categories = $catModel->getCategories();
+		
+		require __DIR__.'/../models/HobbyModel.php';
+		$hobModel = new HobbyModel();
+		$hobModel->deletePreference($param[0]);
+		$hobbies = $hobModel->getPreferences();
+		header('Location:'.URL.'user/myProfile');
+		//$this->view->render('user/userProfile', $categories, $hobbies, [], []);
+	}
+	
+	public function addPreference($param){
+		require __DIR__.'/../models/CategoryModel.php';
+		$catModel = new CategoryModel();
+		$categories = $catModel->getCategories();
+		
+		require __DIR__.'/../models/HobbyModel.php';
+		$hobModel = new HobbyModel();
+		$hobModel->addPreference();
+		$hobbies = $hobModel->getPreferences();
+		header('Location:'.URL.'user/myProfile');
+		//$this->view->render('user/userProfile', $categories, $hobbies, [], []);
+	}
 }

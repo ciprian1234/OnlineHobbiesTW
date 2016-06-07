@@ -20,7 +20,11 @@ class User extends Controller {
 			$this->view->render('user/adminProfile', $categories, [], [], []);
 		}
 		else {
-			$this->view->render('user/userProfile', $categories, [], [], []);
+			require_once __DIR__.'/../models/HobbyModel.php';
+			$hobModel = new HobbyModel();
+			$hobbies = $hobModel->getPreferences();
+			$hobbies2 = $hobModel->getAllHobbies();
+			$this->view->render('user/userProfile', $categories, $hobbies, $hobbies2, []);
 		}
 	}
 
