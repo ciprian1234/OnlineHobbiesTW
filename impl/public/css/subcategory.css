@@ -86,6 +86,9 @@
   text-decoration: none;
   color: blue;
 }
+.articlePreview .buttonDiv .readMoreButton:visited {
+  color: blue;
+}
 .articlePreview .buttonDiv .readMoreButton:hover {
   color: darkblue;
 }

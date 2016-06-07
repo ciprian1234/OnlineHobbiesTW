@@ -19,8 +19,6 @@ class ArticleModel extends Model
     function submitArticle()
     {
         require 'ArticleEntity.php';
-        require '../impl/hybridauth/Hybrid/Auth.php';
-        include('../impl/controllers/config.php');
 
         $this->db->beginTransaction();
         try {
@@ -44,18 +42,6 @@ class ArticleModel extends Model
             if (!$stmt->execute([':id_user' => $id_user, ':id_hobby' => $_POST['hobby'], ':title' => $_POST['title'], ':text' => $_POST['content'], ':image' => $image])) {
                 echo 'Statement for insert article not working!';
             }
-                //Facebook share
-               if($_SESSION['provider'] == "Facebook") {
-                   $hybridauth = new Hybrid_Auth($config);
-                   $facebook = $hybridauth->authenticate("Facebook");
-
-                   $facebook->api()->api("/me/feed", "post", array(
-                       "message" => "I liek train",
-                       "link" => "https://www.youtube.com/watch?v=Ybo4QvKVHoE&list=PLQt1HCjASieeMaOTneNTC51OLwBtaNsbW&index=6",
-                       "name" => "ProjectTw",
-                       "caption" => "And caption"
-                   ));
-               }
 
             $this->db->commit();
         } catch (PDOException $e) {

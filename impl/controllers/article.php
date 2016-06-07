@@ -35,6 +35,25 @@ class Article extends Controller {
 		
         $this->view->render('article/index', $categories, $hobbies, $article, $comments);
     }
+	public function shareArticle($param){
+		require __DIR__. '/../hybridauth/Hybrid/Auth.php';
+		require __DIR__. '/config.php';
+
+		//Facebook share
+		if($_SESSION['provider'] == "Facebook") {
+			$hybridauth = new Hybrid_Auth($config);
+			$facebook = $hybridauth->authenticate("Facebook");
+
+			$facebook->api()->api("/me/feed", "post", array(
+				"message" => "I posted a new article.Check it out.",
+				"link" => URL . "article/" . $param[0],
+				"name" => $param[1],
+				"caption" => "Caption"
+			));
+		}
+
+		header("Location:" . $_SERVER["HTTP_REFERER"]);
+	}
 	
 	public function submitComment($param) {
 		
