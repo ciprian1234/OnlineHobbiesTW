@@ -72,7 +72,7 @@ require 'views/header.php';
 
             <div>
                 <label class="col-3" for="articleContent">Article content:</label>
-                <textarea class="col-10 col-m-10 formItem descriptionArea" id="articleContent" name="content" rows="15"
+                <textarea class="col-10 col-m-10 formItem descriptionArea selectDropdown" id="articleContent" name="content" rows="15"
                           placeholder="Please enter article content..."></textarea>
             </div>
 

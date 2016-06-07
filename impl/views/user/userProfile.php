@@ -5,9 +5,10 @@ require_once 'views/header.php';
 <main class="col-10 col-m-10 mainPage">
     <div class="section">
 
-
-        <h1>User Profile</h1>
-        <h2>Add hobby to preferences</h2>
+        <div class="heading">
+            <h1>User Profile</h1>
+            <h3>Edit hobbies</h3>
+        </div>
         <button class="toggleButton">Add a new hobby</button>
         <div class="col-3-offset col-7 col-m-7 toggleDiv">
             <form class="articleForm" action="<?php echo URL . 'hobbies/addPreference'; ?>" method="post"
@@ -16,7 +17,7 @@ require_once 'views/header.php';
                     <label class="col-2 col-m-1">Select hobby:</label>
                     <?php
                     echo '<select class="col-2 col-m-2 selectDropdown" id="hobby" name="hobby">';
-                    echo '<option value=""></option>';
+                    echo '<option value="">Default</option>';
                     foreach ($articles as $hobby)
                         echo '<option value="' . $hobby->getId_hobby() . '">' . $hobby->getTitle() . '</option>';
                     echo '</select>';
@@ -41,11 +42,11 @@ require_once 'views/header.php';
                     echo '<li class="hobbyListed">';
 
                     echo '<div class="col-10 dummy"></div>';
-                        echo '<div class="col-2">';
-                        echo '<img style="border:1px solid #ccc;" src="' . URL . $hobby->getImage() . '" width="40px" height="40px">';
-                        echo '</div>';
-                                echo '<h3 class="col-3">' . $hobby->getTitle() . '</h3>';
-                                echo '<a class="col-4 col-m-4 deleteButton" href="' . URL . 'hobbies/deletePreference/' . $hobby->getId_hobby() . '">X</a>';
+                    echo '<div class="col-2">';
+                    echo '<img style="border:1px solid #ccc;" src="' . URL . $hobby->getImage() . '" width="40px" height="40px">';
+                    echo '</div>';
+                    echo '<h3 class="col-3">' . $hobby->getTitle() . '</h3>';
+                    echo '<a class="col-4 col-m-4 deleteButton" href="' . URL . 'hobbies/deletePreference/' . $hobby->getId_hobby() . '">X</a>';
                     echo '</li>';
                 }
                 ?>

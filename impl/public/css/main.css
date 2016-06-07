@@ -459,7 +459,7 @@ header .bigButton h3 {
 }
 /*SEARCH BAR END*/
 main {
-  background: linear-gradient(to left, #ECE9E6, #FFFFFF);
+  background: linear-gradient(to top, #E0EAFC, #CFDEF3);
   border: 2px solid lightblue;
   height: auto;
   padding-bottom: 50px;

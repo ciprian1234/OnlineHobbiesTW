@@ -34,7 +34,7 @@ require_once 'views/header.php';
 					<label class="col-2 col-m-1">Select category:</label>
 					<?php
 					echo '<select class="selectDropdown" id="category" name="category" onchange="hobbiesDropdown(\'category\',\'hobby\')">';
-					echo '<option value=""></option>';
+					echo '<option value="">Default</option>';
 					foreach ($categories as $category)
 						echo '<option value="' . $category->getId_category() . '">' . $category->getTitle() . '</option>';
 					echo '</select>';

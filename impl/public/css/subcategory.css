@@ -106,7 +106,6 @@
 .articlePreview .likeCounter:before {
   float: left;
   margin-left: 10px;
-  pointer-events: none;
 }
 .articlePreview .like {
   background: linear-gradient(to top, #ADD100, #7B920A);

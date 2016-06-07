@@ -11,7 +11,7 @@
 		foreach($articles as $article) {
 		echo '<div class="col-10 col-m-10 articlePreview">';
 		echo 	'<div class="col-2 col-m-4 articleImage">
-					<img src="'.URL.$article->getImage().'" alt="Category Image" width="150px" height="150px">
+					<img src="'.URL.$article->getImage().'" alt="Category Image" width="150" height="150">
 				</div>
 				<h3 class="articleTitle">'.$article->getTitle().'</h3>
 				<div class="rating">
