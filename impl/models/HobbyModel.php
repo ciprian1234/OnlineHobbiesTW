@@ -40,9 +40,8 @@ class HobbyModel extends Model {
 	}
 	
 	function addPreference() {
-		
+		//check if preference already exist
 		$result = $this->db->prepare("insert into preferences(id_user, id_hobby) values(:id_user, :id_hobby)");
-		
 		$user=unserialize($_SESSION['user']);
 		$id_user = $user->getId_user();
         if(!$result->execute([':id_user' => $id_user, ':id_hobby' => $_POST['hobby'] ])){

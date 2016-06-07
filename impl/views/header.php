@@ -31,8 +31,8 @@
         </li>
     </ul>
 
-    <form class=" search-container" id="searchForm" action="#" method="get">
-    	<input class="searchBar mHidden" type="text" name="searchQuerry" value="" placeholder="Search for categories, hobbies, articles etc..." size="35" maxlength="999">
+    <form class=" search-container" id="searchForm" action="<?php echo URL. '/article/searchArticles'; ?>" method="post">
+    	<input class="searchBar mHidden" type="text" name="searchQuery" value="" placeholder="Search for categories, hobbies, articles etc..." size="35" maxlength="999">
     </form>
     
 	<?php

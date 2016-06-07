@@ -32,12 +32,13 @@ require_once 'views/header.php';
 				</div>
 				<h3 class="articleTitle">' . $article->getTitle() . '</h3>
 				<div class="rating">
-					 <button class="col-4 col-m-4 likeCounter like" disabled>' . $article->getLikes() . ' </button>
-					 <button class="col-4 col-m-4 likeCounter dislike" disabled>' . $article->getDislikes() . ' </button></div>
+					<a class="col-4 col-m-4 likeCounter like" href="'.URL.'article/likeArticle/'.$article->getId_article().'">' . $article->getLikes() . ' </a>
+					<a class="col-4 col-m-4 likeCounter dislike" href="'.URL.'article/dislikeArticle/'.$article->getId_article().'">' . $article->getDislikes() . ' </a>
+				</div>
 				<h3 class="col-7 col-m-7 articlePreviewContent">' . substr($article->getText(), 0, 300) . '</h3>
 			<div class="col-7 col-m-7 buttonDiv">
-			<a href="' . URL . 'article/index/' . $article->getId_article() . '" class="col-m-2 col-5 readMoreButton"><h3>Read more</h3></a>
-		    <a href="' . URL . 'article/shareArticle/' . $article->getId_article() . '/'.$article->getTitle().'" class="col-m-2 col-5 readMoreButton"><h3>Share to facebook</h3></a>
+				<a href="' . URL . 'article/index/' . $article->getId_article() . '" class="col-m-2 col-5 readMoreButton"><h3>Read more</h3></a>
+				<a href="' . URL . 'article/shareArticle/' . $article->getId_article() . '/'.$article->getTitle().'" class="col-m-2 col-5 readMoreButton"><h3>Share to facebook</h3></a>
 			</div>
 			</div>';
         }

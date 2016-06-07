@@ -129,4 +129,70 @@ class ArticleModel extends Model
         }
         return $articles;
     }
+	
+	/*public function likeArticle($id_article, $like = 1){
+		
+		$user = unserialize($_SESSION['user']);
+		$id_user = $user->getId_user();
+		
+		$stmt = $this->db->prepare("SELECT * from likes where id_user = :id_user and id_hobby = :id_hobby");
+		if (!$stmt->execute([':id_user' => $id_user, ':id_article' => $id_article])) {
+            echo 'Statement not working';
+            var_dump($id_cat);
+        }
+		$row = $stmt->fetch();
+		$var_dump($row);
+		if($row == false)
+			echo 'norows';
+		else
+			echo 'found';
+	}*/
+	
+	
+	public function likeArticle($id_article){
+		
+		$stmt = $this->db->prepare('UPDATE articles set likes = likes + 1 where id_article = :id_article');
+		if (!$stmt->execute([':id_article' => $id_article])) {
+            echo 'Statement for like not working';
+            var_dump($id_article);
+        }
+	}
+	
+	public function dislikeArticle($id_article){
+		
+		$stmt = $this->db->prepare('UPDATE articles set dislikes = dislikes + 1 where id_article = :id_article');
+		if (!$stmt->execute([':id_article' => $id_article])) {
+            echo 'Statement for like not working';
+            var_dump($id_article);
+        }
+	}
+	
+	public function deleteArticle($id_article){
+		
+		$stmt = $this->db->prepare('DELETE from articles where id_article = :id_article');
+		if (!$stmt->execute([':id_article' => $id_article])) {
+            echo 'Statement for delete article not working';
+            var_dump($id_article);
+        }
+	}
+	
+	public function searchArticles(){
+		
+		
+		$stmt = $this->db->prepare("SELECT * from categories c join hobbies h on c.id_category = h.id_category join articles a on h.id_hobby = a.id_hobby
+									WHERE c.title like :query1 or h.title like :query2 or a.title like :query3");
+		$query = '%'.$_POST['searchQuery'].'%';
+		if (!$stmt->execute([':query1' => $query, ':query2' => $query, ':query3' => $query])) {
+            echo 'Statement for search not working';
+            var_dump($id_usr);
+        }
+
+        $articles = [];
+		require 'ArticleEntity.php';
+        while ($row = $stmt->fetch()) {
+            array_push($articles, new ArticleEntity($row['id_article'], $row['id_user'], $row['id_hobby'], $row['likes'], $row['dislikes'],
+                $row['title'], $row['text'], $row['image']));
+        }
+        return $articles;
+	}
 }
