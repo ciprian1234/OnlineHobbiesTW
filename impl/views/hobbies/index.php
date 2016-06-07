@@ -12,7 +12,7 @@ require_once 'views/header.php';
                         echo '<button class="col-2 col-m-2 buttonSubscribe">+</button>';
                     echo '<li><a class="col-6 col-m-8 hobbySubcategory" href="' . URL . 'hobbies/index/' . $hobby->getId_category() . '/' . $hobby->getId_hobby() . '">' . $hobby->getTitle() . '</a></li>';
                         echo '<div class="hobbyBox">';
-                                echo '<img class="" src="'. URL . $hobby->getImage() . '" width="200px" height="200px">';
+                                echo '<img class="" src="'. URL . $hobby->getImage() . '" width="200" height="200">';
                                 echo '<p class="">'.$hobby->getDescription().'</p>';
                         echo '</div>';
                 }
@@ -28,7 +28,7 @@ require_once 'views/header.php';
         foreach ($articles as $article) {
             echo '<div class="col-9 col-m-10 articlePreview">';
             echo '<div class="col-2 col-m-4 articleImage">
-					<img src="' . URL . $article->getImage() . '" alt="Category Image" width="150px" height="150px">
+					<img src="' . URL . $article->getImage() . '" alt="Category Image" width="150" height="150">
 				</div>
 				<h3 class="articleTitle">' . $article->getTitle() . '</h3>
 				<div class="rating">

@@ -78,6 +78,11 @@ class User extends Controller {
     }
 	
 	//admin only
+	
+	public function pdfStatistics(){
+		require __DIR__.'/../models/rapp.php';
+	}
+	
 	public function createCategory(){
 		require __DIR__.'/../models/UserModel.php';
 		$userModel = new UserModel();
