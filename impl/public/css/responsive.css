@@ -22,6 +22,18 @@
     .col-m-11 {width: 91.66%;}
     .col-m-12 {width: 100%;}
     .mHidden {visibility:hidden;}
+    .col-m-1-offset {margin-left: 8.33%;}
+    .col-m-2-offset {margin-left: 16.66%;}
+    .col-m-3-offset {margin-left: 25%;}
+    .col-m-4-offset {margin-left: 33.33%;}
+    .col-m-5-offset {margin-left: 41.66%;}
+    .col-m-6-offset {margin-left: 50%;}
+    .col-m-7-offset {margin-left: 58.33%;}
+    .col-m-8-offset {margin-left: 66.66%;}
+    .col-m-9-offset {margin-left: 75%;}
+    .col-m-10-offset {margin-left: 83.33%;}
+    .col-m-11-offset {margin-left: 91.66%;}
+    .col-m-12-offset {margin-left: 100%;}
 }
 @media only screen and (min-width: 768px) {
     /* For desktop: */

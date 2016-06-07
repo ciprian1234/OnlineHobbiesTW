@@ -380,12 +380,30 @@ footer {
   padding: 8px 24px 8px 10px;
   background-color:#e6e6e6;
   border: none;
+  margin-bottom:30px;
   &:active,
   &:focus {
     outline: none;
     box-shadow: none;
   }
 }
+
+.statLabel{
+  height:30px;
+  background-color:lightgrey;
+  text-align:center;
+}
+.statValue{
+  height:30px;
+  background-color:rgba(0,0,255,0.3);
+  text-align:center;
+}
+
+.createDiv{
+  background-color:rgba(0,0,255,0.3);
+  padding:20px 20px 20px 20px ;
+}
+
 
 .toggleButton{
   position:relative;
@@ -409,14 +427,25 @@ footer {
   }
   &:hover {
     border: 1px solid #fff;
-
-    &:before {
-      box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
-    }
   }
 }
 .toggleDiv{
   display:none;
 }
 
+
+.articleImage {
+  float: left;
+  left:0px;
+}
+
+.article {
+  word-wrap: break-word;
+  border-bottom: 3px solid grey;
+  padding-bottom: 20px;
+  overflow: auto;
+  p {
+    margin-left: 10px;
+  }
+}
 

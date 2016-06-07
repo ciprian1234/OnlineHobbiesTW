@@ -16,7 +16,7 @@
   
 	<?php
             foreach($comments as $comment){
-                echo '<div class="col-3-offset col-5 col-m-10 comment">
+                echo '<div class="col-m-3-offset col-3-offset col-5 col-m-7 comment">
 						<div class="commentAvatar">
 							<img src="'.$comment->getImage().'" width="50px" height="50px">
 						</div>
