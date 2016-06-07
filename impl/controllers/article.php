@@ -100,13 +100,17 @@ class Article extends Controller {
 
 		//Facebook share
 		if($_SESSION['provider'] == "Facebook") {
+			
+			require __DIR__.'/../models/ArticleModel.php';
+			$artModel = new ArticleModel();
+			$article = $artModel->getArticleById($param[0]);
+			
 			$hybridauth = new Hybrid_Auth($config);
 			$facebook = $hybridauth->authenticate("Facebook");
-
 			$facebook->api()->api("/me/feed", "post", array(
 				"message" => "I posted a new article.Check it out.",
 				"link" => URL . "article/" . $param[0],
-				"name" => $param[1],
+				"name" => $article->getTitle(),
 				"caption" => "Caption"
 			));
 		}

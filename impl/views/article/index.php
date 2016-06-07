@@ -18,7 +18,7 @@
             foreach($comments as $comment){
                 echo '<div class="col-m-3-offset col-3-offset col-5 col-m-7 comment">
 						<div class="commentAvatar">
-							<img src="'.$comment->getImage().'" width="50px" height="50px">
+							<img src="'.$comment->getImage().'" width="50" height="50" alt="Img">
 						</div>
 						<div class="commentName">
 							<h3 class="commentNameV">'.$comment->getUsername().'</h3>

@@ -9,12 +9,12 @@ require_once 'views/header.php';
                 <?php
                 foreach ($hobbies as $hobby) {
                     if(isset($_SESSION['user']))
-                        echo '<button class="col-2 col-m-2 buttonSubscribe">+</button>';
+                        echo '<li><button class="col-2 col-m-2 buttonSubscribe">+</button></li>';
                     echo '<li><a class="col-6 col-m-8 hobbySubcategory" href="' . URL . 'hobbies/index/' . $hobby->getId_category() . '/' . $hobby->getId_hobby() . '">' . $hobby->getTitle() . '</a></li>';
-                        echo '<div class="hobbyBox">';
-                                echo '<img class="" src="'. URL . $hobby->getImage() . '" width="200" height="200">';
+                        echo '<li><div class="hobbyBox">';
+                                echo '<img class="" src="'. URL . $hobby->getImage() . '" width="200" height="200" alt="noImg">';
                                 echo '<p class="">'.$hobby->getDescription().'</p>';
-                        echo '</div>';
+                        echo '</div></li>';
                 }
                 ?>
             </ul>
@@ -38,7 +38,7 @@ require_once 'views/header.php';
 				<h3 class="col-7 col-m-7 articlePreviewContent">' . substr($article->getText(), 0, 300) . '</h3>
 			<div class="col-7 col-m-7 buttonDiv">
 				<a href="' . URL . 'article/index/' . $article->getId_article() . '" class="col-m-2 col-5 readMoreButton"><h3>Read more</h3></a>
-				<a href="' . URL . 'article/shareArticle/' . $article->getId_article() . '/'.$article->getTitle().'" class="col-m-2 col-5 readMoreButton"><h3>Share to facebook</h3></a>
+				<a href="' . URL . 'article/shareArticle/' . $article->getId_article().'" class="col-m-2 col-5 readMoreButton"><h3>Share to facebook</h3></a>
 			</div>
 			</div>';
         }

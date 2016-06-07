@@ -67,7 +67,7 @@ class HobbyModel extends Model {
 					$row = $result->fetch();
 					$facebook->api()->api("/me/feed", "post", array(
 					"message" => $_POST['motiv'],
-					"link" => URL . "hobbies/".$row['id_category']."/" . $_POST['hobby']
+					"link" => URL . "hobbies/". $row['id_category']."/" . $_POST['hobby']
 					//"name" => $param[1],
 					//"caption" => "Caption"
 					));
