@@ -61,7 +61,7 @@ require 'views/header.php';
             <select class="selectDropdown" id="hobby" name="hobby"></select>
             <div>
                 <label class="col-1 col-m-1" for="title">Article title:</label>
-                <input class="col-5 col-m-5 formItem" type="text" name="title" id="title"
+                <input class="col-5 col-m-5 formItem selectDropdown" type="text" name="title" id="title"
                        placeholder="Please enter article title..." size="50" maxlength="50">
             </div>
 
