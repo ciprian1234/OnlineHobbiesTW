@@ -41,13 +41,42 @@ class HobbyModel extends Model {
 	
 	function addPreference() {
 		//check if preference already exist
-		$result = $this->db->prepare("insert into preferences(id_user, id_hobby) values(:id_user, :id_hobby)");
+		$result = $this->db->prepare("insert into preferences(id_user, id_hobby, motiv) values(:id_user, :id_hobby, :motiv)");
 		$user=unserialize($_SESSION['user']);
 		$id_user = $user->getId_user();
-        if(!$result->execute([':id_user' => $id_user, ':id_hobby' => $_POST['hobby'] ])){
+        if(!$result->execute([':id_user' => $id_user, ':id_hobby' => $_POST['hobby'], ':motiv' => $_POST['motiv'] ])){
             echo 'Statement addPreference not working';
             var_dump($id_hobby);
         }
+		
+		if(isset($_POST['shareToFacebok'])){
+			require __DIR__. '/../hybridauth/Hybrid/Auth.php';
+			require __DIR__. '/../controllers/config.php';
+
+			//Facebook share
+			if($_SESSION['provider'] == "Facebook") {
+				$hybridauth = new Hybrid_Auth($config);
+				$facebook = $hybridauth->authenticate("Facebook");
+				
+				//select id_category
+				$result = $this->db->prepare("SELECT id_category FROM hobbies WHERE id_hobby = :id_hobby");
+				if(!$result->execute([':id_hobby' => $_POST['hobby'] ])){
+					echo 'Statement select id category not working';
+				}
+				else {
+					$row = $result->fetch();
+					$facebook->api()->api("/me/feed", "post", array(
+					"message" => $_POST['motiv'],
+					"link" => URL . "hobbies/".row['id_category']."/" . $_POST['hobby']
+					//"name" => $param[1],
+					//"caption" => "Caption"
+					));
+				}
+			}
+				
+			
+			
+		}
 	}
 	
 	function getHobbies($id_category) {
