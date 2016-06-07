@@ -45,7 +45,7 @@
                echo "http://graph.facebook.com/" . $user->getId() . "/picture?width=75&height=75\"";
            else
                echo $user->getImage() . "\"";
-		echo "</img>";
+		echo " alt='noImg'>";
         echo "  <div class=\"dropdown\">
 			<a class='profileButton' href=\"".URL."user/myProfile\">My profile</a>
             <a class='profileButton' href=\"". URL. "user/myArticles\">My articles</a>

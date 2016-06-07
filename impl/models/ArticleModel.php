@@ -12,6 +12,9 @@ class ArticleModel extends Model {
         //echo "Home_Model <br>";
     }
 	
+	function likeArticle($id_article){
+		
+	}
 	
 	function submitArticle() {
 		require 'ArticleEntity.php';
